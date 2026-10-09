@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><style id="qw-theme">:root {
+  --color-bg: #faf9fc !important;
+  --color-text: #131920 !important;
+  --flow-size-overview-canvas-min-height: 480px !important;
+  --color-navbar-bg: #f9f9fb !important;
+  --color-navbar-fg: #131920 !important;
+  --color-navbar-fg-muted: color-mix(in srgb, #131920 65%, #f9f9fb) !important;
+  --color-navbar-divider: #0000001f !important;
+  --color-leftnav-bg: #f9f9fb !important;
+  --color-bg-chat-view: #f9f9fb !important;
+  --color-bg-secondary: #fff !important;
+  --color-bg-tertiary: #f9fafb !important;
+  --color-bg-hover: #f3f4f6 !important;
+  --color-surface: #f9fafb !important;
+  --color-surface-hover: #f3f4f6 !important;
+  --color-surface-active: #e5e7eb !important;
+  --color-border: #0000001f !important;
+  --color-border-light: #0000000f !important;
+  --color-border-strong: #d1d5db !important;
+  --background-toggle-off-default: #fff0 !important;
+  --color-primary: #4200db !important;
+  --color-primary-dark: #35009e !important;
+  --color-primary-light: #8575ff !important;
+  --color-primary-bg: #e8e6ff !important;
+  --color-primary-hover-border: #35009e !important;
+  --color-nav-icon-active: #4200db !important;
+  --color-nav-hover-border: #4200db !important;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent) !important;
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent) !important;
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent) !important;
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent) !important;
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent) !important;
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent) !important;
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent) !important;
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent) !important;
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent) !important;
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent) !important;
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent) !important;
+  --color-focus-ring: #4200db !important;
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-sidebar-hover-solid: color-mix(in srgb, #4200db 12%, #faf9fc) !important;
+  --color-selection-copy: #3b82f64d !important;
+  --color-selection-capture: color-mix(in srgb, #4200db 25%, transparent) !important;
+  --block-hover-outline: 1px dashed color-mix(in srgb, #4200db 50%, transparent) !important;
+  --block-selected-outline: 1px solid #8575ff !important;
+  --block-selection-outline-offset: 2px !important;
+  --block-selected-halo: 0 0 8px color-mix(in srgb, #4200db 40%, transparent) !important;
+  --color-accent: #4200db !important;
+  --color-accent-foreground: #4200db !important;
+  --color-accent-dark: #35009e !important;
+  --color-accent-light: #e8e6ff !important;
+  --color-accent-inverse: #fff !important;
+  --color-link: #4200db !important;
+  --color-brand-ai-gradient-start: #6842ff !important;
+  --color-brand-ai-gradient-mid: #d600ba !important;
+  --color-brand-ai-gradient-end: #ff4b14 !important;
+  --color-primary-gradient-end: #e8e6ff !important;
+  --color-primary-bg-solid: #e8e6ff !important;
+  --color-user-bubble: #f3f3f7 !important;
+  --color-user-bubble-text: #131920 !important;
+  --color-text-secondary: #5e5e5e !important;
+  --color-text-tertiary: #656871 !important;
+  --color-text-muted: #9ca3af !important;
+  --color-text-on-primary: #fff !important;
+  --color-success: #00802f !important;
+  --color-success-dark: #00471e !important;
+  --color-success-light: #d9ffd6 !important;
+  --color-success-hover: #005c26 !important;
+  --color-success-bg: #e6f5eb !important;
+  --color-success-border: #b3d9bf !important;
+  --color-success-foreground: #00802f !important;
+  --color-success-dark-foreground: #00471e !important;
+  --color-success-text: #00471e !important;
+  --color-error: #db0000 !important;
+  --color-error-dark: #700000 !important;
+  --color-error-light: #ffe0e0 !important;
+  --color-error-hover: #ffe0e0 !important;
+  --color-error-bg: #fceaea !important;
+  --color-error-border: #f2cccc !important;
+  --color-error-active-border: #db0000 !important;
+  --color-error-foreground: #db0000 !important;
+  --color-error-dark-foreground: #700000 !important;
+  --color-error-inverse: #fff !important;
+  --color-error-text: #700000 !important;
+  --color-warning: #f2b100 !important;
+  --color-warning-dark: #573a00 !important;
+  --color-warning-light: #fffbbd !important;
+  --color-warning-hover: #db9200 !important;
+  --color-warning-bg: #fef7e6 !important;
+  --color-warning-border: #f9dfa3 !important;
+  --color-warning-foreground: #f2b100 !important;
+  --color-warning-dark-foreground: #573a00 !important;
+  --color-warning-inverse: #573a00 !important;
+  --color-surface-warning: #fffbbd !important;
+  --color-text-warning: #573a00 !important;
+  --color-info: #006ce0 !important;
+  --color-info-dark: #002a66 !important;
+  --color-info-light: #d1f1ff !important;
+  --color-info-hover: #003b8f !important;
+  --color-info-bg: #ebf3fc !important;
+  --color-info-border: #b3d1f0 !important;
+  --color-info-foreground: #006ce0 !important;
+  --color-info-dark-foreground: #002a66 !important;
+  --color-info-inverse: #fff !important;
+  --color-overlay: #00000080 !important;
+  --color-shadow: #00000014 !important;
+  --color-hover: #0000000d !important;
+  --color-tooltip-bg: #000000d9 !important;
+  --color-tooltip-text: #fff !important;
+  --color-voice-purple: #8575ff !important;
+  --color-voice-purple-dark: #4200db !important;
+  --color-voice-purple-light: #8575ff !important;
+  --color-voice-red: #db0000 !important;
+  --color-voice-red-dark: #700000 !important;
+  --color-voice-amber: #f2b100 !important;
+  --color-voice-purple-glow: #4200db66 !important;
+  --color-voice-red-glow: #db000066 !important;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace !important;
+  --text-2xs: .5625rem !important;
+  --text-xs: .625rem !important;
+  --text-sm: .6875rem !important;
+  --text-base: .75rem !important;
+  --text-md: .8125rem !important;
+  --text-lg: .875rem !important;
+  --text-xl: 1rem !important;
+  --text-2xl: 1.125rem !important;
+  --text-3xl: 1.25rem !important;
+  --text-4xl: 1.5rem !important;
+  --text-5xl: 2rem !important;
+  --spacing-1: calc(.25rem * 1) !important;
+  --spacing-1-5: calc(.25rem * 1.5) !important;
+  --spacing-2: calc(.25rem * 2) !important;
+  --spacing-3: calc(.25rem * 3) !important;
+  --spacing-4: calc(.25rem * 4) !important;
+  --spacing-5: calc(.25rem * 5) !important;
+  --spacing-6: calc(.25rem * 6) !important;
+  --spacing-7: calc(.25rem * 7) !important;
+  --spacing-8: calc(.25rem * 8) !important;
+  --spacing-9: calc(.25rem * 9) !important;
+  --spacing-10: calc(.25rem * 10) !important;
+  --border-radius-rounded-lg: 8px !important;
+  --radius-sm: 6px !important;
+  --radius-md: 10px !important;
+  --radius-card: 12px !important;
+  --radius-lg: 16px !important;
+  --radius-pill: 8px !important;
+  --shadow-sm: 0 1px 2px #0000000d !important;
+  --shadow-md: 0 4px 12px #00000014 !important;
+  --shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029 !important;
+  --color-success-bg-solid: #d9ffd6 !important;
+  --color-error-bg-solid: #ffe0e0 !important;
+  --color-error-border-solid: #ffe0e0 !important;
+  --color-warning-bg-solid: #fffbbd !important;
+  --color-warning-text: #573a00 !important;
+  --color-info-bg-solid: #d1f1ff !important;
+  --color-info-bg-solid-alt: #d1f1ff !important;
+  --color-info-text: #002a66 !important;
+  --color-info-text-alt: #002a66 !important;
+  --color-emerald: #10b981 !important;
+  --color-teal: #4ecdc4 !important;
+  --color-code-bg: #f3f3f7 !important;
+  --color-code-header-bg: #f1f3f5 !important;
+  --color-code-text: #24292e !important;
+  --color-code-border: #e1e4e8 !important;
+  --color-code-muted: #6a737d !important;
+  --color-inline-code-bg: #f3f3f7 !important;
+  --color-inline-code-text: #24292e !important;
+  --color-inline-code-border: #e1e4e8 !important;
+  --color-scrollbar-thumb: #d1d5db !important;
+  --color-scrollbar-track: transparent !important;
+  --color-graph-node-text: #333 !important;
+  --color-graph-node-text-dim: #7f8c8d !important;
+  --color-graph-edge-default: #95a5a6 !important;
+  --color-graph-edge-cross: #e67e22 !important;
+  --color-graph-edge-text: #666 !important;
+  --color-graph-edge-stroke: #fff !important;
+  --color-graph-highlight-bg: #ff6b6b !important;
+  --color-graph-highlight-border: #e74c3c !important;
+  --color-graph-search-bg: gold !important;
+  --color-graph-search-border: orange !important;
+  --color-graph-focus-border: #c0392b !important;
+  --color-graph-external-border: #95a5a6 !important;
+  --color-graph-selected-border: #4200db !important;
+  --qs-data-cat-01: #4338ca !important;
+  --qs-data-cat-02: #d97706 !important;
+  --qs-data-cat-03: #0891b2 !important;
+  --qs-data-cat-04: #8b5cf6 !important;
+  --qs-data-cat-05: #15803d !important;
+  --qs-data-cat-06: #0c4a6e !important;
+  --qs-data-cat-07: #d946ef !important;
+  --qs-data-cat-08: #65a30d !important;
+  --qs-data-cat-09: #1d4ed8 !important;
+  --qs-data-cat-10: #831843 !important;
+  --qs-data-cat-11: #c2410c !important;
+  --qs-data-cat-12: #115e59 !important;
+  --qs-data-cat-other: #737373 !important;
+  --color-graph-cat-person: #4338ca !important;
+  --color-graph-cat-module: #4338ca !important;
+  --color-graph-cat-organization: #d97706 !important;
+  --color-graph-cat-org: #d97706 !important;
+  --color-graph-cat-variable: #d97706 !important;
+  --color-graph-cat-column: #d97706 !important;
+  --color-graph-cat-project: #0891b2 !important;
+  --color-graph-cat-sheet: #0891b2 !important;
+  --color-graph-cat-url: #0891b2 !important;
+  --color-graph-cat-product: #8b5cf6 !important;
+  --color-graph-cat-class: #8b5cf6 !important;
+  --color-graph-cat-dashboard: #8b5cf6 !important;
+  --color-graph-cat-place: #15803d !important;
+  --color-graph-cat-location: #15803d !important;
+  --color-graph-cat-function: #15803d !important;
+  --color-graph-cat-event: #0c4a6e !important;
+  --color-graph-cat-date: #0c4a6e !important;
+  --color-graph-cat-service: #0c4a6e !important;
+  --color-graph-cat-creativework: #d946ef !important;
+  --color-graph-cat-doc: #d946ef !important;
+  --color-graph-cat-message: #65a30d !important;
+  --color-graph-cat-channel: #65a30d !important;
+  --color-graph-cat-email: #65a30d !important;
+  --color-graph-cat-visual: #65a30d !important;
+  --color-graph-cat-file: #1d4ed8 !important;
+  --color-graph-cat-file-aggregate: #1d4ed8 !important;
+  --color-graph-cat-code: #1d4ed8 !important;
+  --color-graph-cat-decision: #831843 !important;
+  --color-graph-cat-action: #831843 !important;
+  --color-graph-cat-observation: #831843 !important;
+  --color-graph-cat-metric: #831843 !important;
+  --color-graph-cat-topic: #c2410c !important;
+  --color-graph-cat-concept: #c2410c !important;
+  --color-graph-cat-definedterm: #c2410c !important;
+  --color-graph-cat-instruction: #c2410c !important;
+  --color-graph-cat-import: #c2410c !important;
+  --color-graph-cat-dataset: #115e59 !important;
+  --color-graph-cat-occupation: #115e59 !important;
+  --color-graph-cat-method: #115e59 !important;
+  --color-graph-cat-folder: #737373 !important;
+  --color-graph-cat-unknown: #737373 !important;
+  --color-graph-rel-contains: #bdc3c7 !important;
+  --color-graph-rel-extends: #9b59b6 !important;
+  --color-graph-rel-implements: #3498db !important;
+  --color-graph-rel-imports: #e67e22 !important;
+  --color-graph-rel-uses: #2ecc71 !important;
+  --color-graph-rel-calls: #27ae60 !important;
+  --color-graph-rel-references: #f39c12 !important;
+  --color-graph-rel-related-to: #95a5a6 !important;
+  --color-graph-rel-works-on: #e74c3c !important;
+  --color-graph-rel-owns: #1abc9c !important;
+  --color-graph-rel-depends-on: #e67e22 !important;
+  --color-graph-rel-parent-of: #bdc3c7 !important;
+  --qs-content: #fff !important;
+  --qs-main: #fff !important;
+  --qs-primary-foreground: #131920 !important;
+  --qs-secondary-foreground: #656871 !important;
+  --qs-tertiary-foreground: #9ca3af !important;
+  --qs-placeholder-foreground: #656871 !important;
+  --qs-divider: #dedee3 !important;
+  --qs-default-border: #8c8c94 !important;
+  --qs-neutral-soft: #b4b4bb !important;
+  --qs-neutral-gray-50: #f9fafb !important;
+  --qs-tertiary-background: #f9fafb !important;
+  --qs-action-hover: #f3f3f7 !important;
+  --qs-primary-default: #4200db !important;
+  --qs-primary-dark: #35009e !important;
+  --qs-primary-light: #e8e6ff !important;
+  --qs-success-default: #00802f !important;
+  --qs-error-default: #db0000 !important;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+  --mc-status-needs-input-bg: #fffbbd !important;
+  --mc-status-needs-input-fg: #573a00 !important;
+  --mc-status-error-bg: #ffe0e0 !important;
+  --mc-status-error-fg: #700000 !important;
+  --mc-status-running-bg: #d1f1ff !important;
+  --mc-status-running-fg: #002a66 !important;
+  --mc-badge-success-bg: #aeffa8 !important;
+  --mc-badge-success-fg: #00471e !important;
+  --mc-badge-warning-bg: #ffed4d !important;
+  --mc-badge-warning-fg: #573a00 !important;
+  --mc-schedule-tile-border: #ffe0fb !important;
+  --mc-schedule-tile-bg: color-mix(in srgb, #ffe0fb 28%, #fff) !important;
+  --safe-top: 0px !important;
+  --safe-bottom: 0px !important;
+  --safe-left: 0px !important;
+  --safe-right: 0px !important;
+  --qs-action-active: #e8e6ff !important;
+  --qs-action-disabled: #f3f3f7 !important;
+  --qs-active-border: #4200db !important;
+  --qs-application-navbar: #4200db !important;
+  --qs-application-navbar-dark: #35009e !important;
+  --qs-application-navbar-foreground: #fff !important;
+  --qs-application-navbar-light: #e8e6ff !important;
+  --qs-automation-dark: #660052 !important;
+  --qs-automation-default: #d600ba !important;
+  --qs-automation-light: #ffe0fb !important;
+  --qs-automation-medium: #b3008f !important;
+  --qs-automation-soft: #ff94f1 !important;
+  --qs-avatar-blue-bg: #d1f1ff !important;
+  --qs-avatar-blue-fg: #002a66 !important;
+  --qs-avatar-fuchsia-bg: #fce6ff !important;
+  --qs-avatar-fuchsia-fg: #590066 !important;
+  --qs-avatar-green-bg: #d9ffd6 !important;
+  --qs-avatar-green-fg: #00471e !important;
+  --qs-avatar-neutral-bg: #dedee3 !important;
+  --qs-avatar-neutral-fg: #131920 !important;
+  --qs-avatar-orange-bg: #ffe0d6 !important;
+  --qs-avatar-orange-fg: #661800 !important;
+  --qs-avatar-pink-bg: #ffe0fb !important;
+  --qs-avatar-pink-fg: #660052 !important;
+  --qs-avatar-primary-bg: #e8e6ff !important;
+  --qs-avatar-primary-fg: #35009e !important;
+  --qs-avatar-red-bg: #ffe0e0 !important;
+  --qs-avatar-red-fg: #700000 !important;
+  --qs-avatar-violet-bg: #f2e5ff !important;
+  --qs-avatar-violet-fg: #45008a !important;
+  --qs-avatar-yellow-bg: #fffbbd !important;
+  --qs-avatar-yellow-fg: #573a00 !important;
+  --qs-brand: #fff !important;
+  --qs-brand-foreground: #131920 !important;
+  --qs-brand-navbar: #131920 !important;
+  --qs-brand-navbar-dark: #000 !important;
+  --qs-brand-navbar-foreground: #fff !important;
+  --qs-brand-navbar-light: #dedee3 !important;
+  --qs-coachmark: #006ce0 !important;
+  --qs-connection-dark: #661800 !important;
+  --qs-connection-default: #db3300 !important;
+  --qs-connection-light: #ffe0d6 !important;
+  --qs-connection-soft: #ff997a !important;
+  --qs-content-inverse: #333843 !important;
+  --qs-content-inverse-active: #131920 !important;
+  --qs-contrast-foreground: #131920 !important;
+  --qs-default-badge: #b4b4bb !important;
+  --qs-default-badge-dot: #656871 !important;
+  --qs-dimension: #4200db !important;
+  --qs-dimension-experimental: #4200db !important;
+  --qs-dimension-experimental-foreground: #4200db !important;
+  --qs-dimension-foreground: #fff !important;
+  --qs-disabled: #8c8c94 !important;
+  --qs-disabled-border: #dedee3 !important;
+  --qs-disabled-foreground: #b4b4bb !important;
+  --qs-divider-light: #f3f3f7 !important;
+  --qs-error-active-border: #db0000 !important;
+  --qs-error-border: #ffe0e0 !important;
+  --qs-error-dark: #700000 !important;
+  --qs-error-foreground: #db0000 !important;
+  --qs-error-inverse: #fff !important;
+  --qs-error-light: #ffe0e0 !important;
+  --qs-error-medium: #900 !important;
+  --qs-error-soft: #ff9e9e !important;
+  --qs-focus-offset: 1px !important;
+  --qs-font-base-letter-spacing: .15px !important;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+  --qs-grid-gap: 16px !important;
+  --qs-grid-gap-xl: 24px !important;
+  --qs-hero-banner-button-hover: color-mix(in srgb, #fff, transparent 60%) !important;
+  --qs-hover-border: #333843 !important;
+  --qs-info-dark: #002a66 !important;
+  --qs-info-default: #006ce0 !important;
+  --qs-info-inverse: #fff !important;
+  --qs-info-light: #d1f1ff !important;
+  --qs-info-medium: #003b8f !important;
+  --qs-info-soft: #75cfff !important;
+  --qs-insight-dark: #590066 !important;
+  --qs-insight-default: #a000b8 !important;
+  --qs-insight-light: #fce6ff !important;
+  --qs-insight-soft: #f299ff !important;
+  --qs-main-foreground: #131920 !important;
+  --qs-main-secondary-foreground: #656871 !important;
+  --qs-measure: #00802f !important;
+  --qs-measure-experimental: #f2b100 !important;
+  --qs-measure-experimental-foreground: #f2b100 !important;
+  --qs-measure-foreground: #fff !important;
+  --qs-neutral-black: #000 !important;
+  --qs-neutral-dark: #333843 !important;
+  --qs-neutral-deep: #656871 !important;
+  --qs-neutral-default: #dedee3 !important;
+  --qs-neutral-light: #f3f3f7 !important;
+  --qs-neutral-lightest: #f9f9fb !important;
+  --qs-neutral-medium: #8c8c94 !important;
+  --qs-neutral-strong: #131920 !important;
+  --qs-neutral-white: #fff !important;
+  --qs-overlay: color-mix(in srgb, #131920, transparent 50%) !important;
+  --qs-primary-inverse: #fff !important;
+  --qs-primary-inverse-foreground: #fff !important;
+  --qs-primary-medium: #8575ff !important;
+  --qs-primary-soft: #b2a8ff !important;
+  --qs-secondary: #dedee3 !important;
+  --qs-secondary-dark: #b4b4bb !important;
+  --qs-secondary-light: #f3f3f7 !important;
+  --qs-spice: #ff9800 !important;
+  --qs-success-dark: #00471e !important;
+  --qs-success-inverse: #fff !important;
+  --qs-success-light: #d9ffd6 !important;
+  --qs-success-medium: #005c26 !important;
+  --qs-success-soft: #aeffa8 !important;
+  --qs-tag-default: #dedee3 !important;
+  --qs-tag-soft-border: #b4b4bb !important;
+  --qs-toggle-tile-lg: calc(.25rem * 15) !important;
+  --qs-toggle-tile-md: calc(.25rem * 12) !important;
+  --qs-toggle-tile-sm: calc(.25rem * 8) !important;
+  --qs-transparent: transparent !important;
+  --qs-visualization-dark: #45008a !important;
+  --qs-visualization-default: #7300e5 !important;
+  --qs-visualization-light: #f2e5ff !important;
+  --qs-visualization-soft: #d4a8ff !important;
+  --qs-warning-dark: #573a00 !important;
+  --qs-warning-default: #f2b100 !important;
+  --qs-warning-experimental: #f2b100 !important;
+  --qs-warning-experimental-light: #fffbbd !important;
+  --qs-warning-experimental-light-foreground: #fffbbd !important;
+  --qs-warning-inverse: #573a00 !important;
+  --qs-warning-light: #fffbbd !important;
+  --qs-warning-medium: #db9200 !important;
+  --qs-warning-soft: #ffed4d !important;
+  --qs-width-modal-lg: 1136px !important;
+  --qs-width-modal-md: 600px !important;
+  --qs-width-modal-sm: 384px !important;
+  --qs-duration-reorder: .125s !important;
+  --qs-ease-reorder: ease-in-out !important;
+  --react-pdf-text-layer: 1 !important;
+  --highlight-bg-color: #b400aa !important;
+  --highlight-selected-bg-color: #006400 !important;
+  --react-pdf-annotation-layer: 1 !important;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>") !important;
+  --input-focus-border-color: Highlight !important;
+  --input-focus-outline: 1px solid Canvas !important;
+  --input-unfocused-border-color: transparent !important;
+  --input-disabled-border-color: transparent !important;
+  --input-hover-border-color: black !important;
+  --link-outline: none !important;
+}</style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>In-country DLP Gateway перед Amazon Bedrock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#0f172a;--ink2:#475569;--mute:#94a3b8;--line:#e2e8f0;--blue:#2563eb;--blue-bg:#eff6ff;--org:#ea7a00;--org-bg:#fff7ed;--red:#dc2626;--red-bg:#fef2f2;--grn:#16a34a;--grn-bg:#f0fdf4;--vio:#7c3aed;--vio-bg:#f5f3ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;font-size:15px;line-height:1.55}
+a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(37,99,235,.25)}
+a:hover{border-color:var(--blue)}
+code,.mono{font-family:'JetBrains Mono',monospace;font-size:12.5px}
+code{background:#f1f5f9;border:1px solid var(--line);padding:1px 5px;border-radius:5px;color:#0f172a}
+.wrap{max-width:1440px;margin:0 auto;padding:48px 48px 64px}
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:28px}
+.eyebrow{font:600 12px 'JetBrains Mono';letter-spacing:.14em;color:var(--blue);margin-bottom:10px}
+h1{font-size:40px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+h1 span{color:var(--org)}
+.lead{margin-top:12px;font-size:17px;color:var(--ink2);max-width:900px}
+.meta{text-align:right;font:500 12px 'JetBrains Mono';color:var(--mute);line-height:1.8;white-space:nowrap}
+.meta b{color:var(--ink2);font-weight:600}
+h2{font-size:22px;font-weight:800;letter-spacing:-.01em;margin:44px 0 6px}
+.h2sub{color:var(--ink2);margin-bottom:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.04)}
+
+/* diagram */
+.diagram{position:relative;padding:0;overflow:hidden}
+.dg{position:relative;width:100%;aspect-ratio:1344/560}
+.dg svg{position:absolute;inset:0;width:100%;height:100%}
+.zone-c{fill:#f8fbff;stroke:#bfdbfe;stroke-width:1.5}
+.zone-r{fill:#fffaf3;stroke:#fed7aa;stroke-width:1.5}
+.zl{font:600 12px 'JetBrains Mono';letter-spacing:.12em}
+.wire{fill:none;stroke:#cbd5e1;stroke-width:2}
+.wire.d{stroke-dasharray:5 5}
+.pulse{fill:none;stroke-linecap:round;stroke-width:5;stroke-dasharray:46 3000;stroke-dashoffset:46;opacity:0}
+.nd rect{fill:#fff;stroke:#e2e8f0;stroke-width:1.5;transition:all .3s}
+.nd.on rect{stroke:var(--blue);stroke-width:2.5;filter:drop-shadow(0 6px 18px rgba(37,99,235,.25))}
+.nd.gw.on rect{stroke:var(--grn);filter:drop-shadow(0 6px 18px rgba(22,163,74,.25))}
+.nd.br.on rect{stroke:var(--org);filter:drop-shadow(0 6px 18px rgba(234,122,0,.25))}
+.nk{font:600 10.5px 'JetBrains Mono';letter-spacing:.1em;fill:#94a3b8}
+.nt{font:800 17px 'Manrope';fill:#0f172a}
+.nd2{font:500 12px 'Manrope';fill:#475569}
+.tag rect{fill:#eff6ff;stroke:none}.tag text{font:500 10.5px 'JetBrains Mono';fill:#1d4ed8}
+.tag.o rect{fill:#fff7ed}.tag.o text{fill:#c2410c}
+.tag.g rect{fill:#f0fdf4}.tag.g text{fill:#15803d}
+.tag.v rect{fill:#f5f3ff}.tag.v text{fill:#6d28d9}
+.borderline{stroke:#ef4444;stroke-width:2;stroke-dasharray:7 6}
+.bl{font:700 11px 'JetBrains Mono';letter-spacing:.14em;fill:#ef4444}
+.legend{display:flex;gap:18px;flex-wrap:wrap;padding:14px 22px;border-top:1px solid var(--line);font-size:13px;color:var(--ink2)}
+.legend i{display:inline-block;width:22px;height:4px;border-radius:2px;margin-right:7px;vertical-align:middle}
+
+.player{display:grid;grid-template-columns:auto 1fr;gap:0;border-top:1px solid var(--line)}
+.steps{display:flex;flex-direction:column;border-right:1px solid var(--line);min-width:230px}
+.steps button{all:unset;cursor:pointer;padding:11px 20px;font:600 13px 'Manrope';color:var(--ink2);border-left:3px solid transparent}
+.steps button:hover{background:#f8fafc}
+.steps button.on{color:var(--ink);background:var(--blue-bg);border-left-color:var(--blue)}
+.steps .ctl{display:flex;gap:8px;padding:12px 20px;border-top:1px solid var(--line)}
+.steps .ctl button{padding:5px 10px;border:1px solid var(--line);border-radius:8px;font-size:12px;background:#fff}
+.view{padding:20px 26px}
+.vlabel{font:600 11px 'JetBrains Mono';letter-spacing:.12em;color:var(--mute);margin-bottom:6px}
+.payload{font:500 14px 'JetBrains Mono';background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:14px 16px;line-height:1.7;word-break:break-word}
+.payload .p{color:var(--red);background:var(--red-bg);padding:1px 5px;border-radius:5px}
+.payload .m{color:var(--grn);background:var(--grn-bg);padding:1px 5px;border-radius:5px}
+.where{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:20px;font:600 11px 'JetBrains Mono'}
+.where.in{background:var(--blue-bg);color:var(--blue)}.where.out{background:var(--org-bg);color:var(--org)}
+.vdesc{margin-top:12px;color:var(--ink2);font-size:14.5px}
+
+/* grids */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.comp{padding:20px 22px}
+.comp .k{font:600 11px 'JetBrains Mono';letter-spacing:.12em;margin-bottom:6px}
+.comp h3{font-size:18px;font-weight:800;margin-bottom:8px}
+.comp p{color:var(--ink2);font-size:14px;margin-bottom:10px}
+.comp ul{list-style:none;font-size:13.5px;color:var(--ink2)}
+.comp li{padding:5px 0 5px 16px;position:relative;border-top:1px dashed var(--line)}
+.comp li:before{content:"";position:absolute;left:2px;top:13px;width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.4}
+.comp .links{margin-top:12px;font-size:13px;display:flex;flex-wrap:wrap;gap:6px 14px}
+.k.b{color:var(--blue)}.k.g{color:var(--grn)}.k.o{color:var(--org)}.k.v{color:var(--vio)}.k.r{color:var(--red)}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font:600 11px 'JetBrains Mono';letter-spacing:.1em;color:var(--mute);padding:12px 16px;border-bottom:1px solid var(--line);background:#fafbfc}
+td{padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+td:first-child{color:var(--ink);font-weight:600}
+tr:last-child td{border-bottom:none}
+.st{display:inline-block;padding:2px 9px;border-radius:20px;font:600 11px 'JetBrains Mono';white-space:nowrap}
+.st.no{background:var(--grn-bg);color:var(--grn)}.st.yes{background:var(--org-bg);color:var(--org)}.st.never{background:var(--blue-bg);color:var(--blue)}.st.q{background:var(--red-bg);color:var(--red)}
+
+.modes .comp{border-top:4px solid var(--line)}
+.modes .a{border-top-color:var(--grn)}.modes .b{border-top-color:var(--vio)}
+.kv{display:grid;grid-template-columns:130px 1fr;gap:6px 12px;font-size:13.5px;margin-top:6px}
+.kv div:nth-child(odd){color:var(--mute);font:600 11px 'JetBrains Mono';letter-spacing:.06em;padding-top:2px}
+
+pre{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:18px 20px;font:500 12.5px/1.65 'JetBrains Mono';overflow:auto}
+pre .c{color:#64748b}pre .s{color:#86efac}pre .k2{color:#93c5fd}
+
+.risk{padding:18px 20px}
+.risk .k{margin-bottom:4px}
+.risk h4{font-size:15.5px;font-weight:800;margin-bottom:6px}
+.risk p{font-size:13.5px;color:var(--ink2)}
+.foot{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--mute)}
+@media (max-width:1100px){.g3,.g4{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}header{flex-direction:column;align-items:flex-start}.meta{text-align:left}}
+
+.lang{display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:3px;position:fixed;top:16px;right:20px;z-index:10;box-shadow:0 4px 14px rgba(15,23,42,.08)}
+.lang button{all:unset;cursor:pointer;padding:5px 12px;border-radius:7px;font:600 12px 'JetBrains Mono';color:var(--ink2)}
+.lang button.on{background:var(--ink);color:#fff}
+html[lang=ru] .en-only{display:none}html[lang=en] .ru-only{display:none}
+.tbx{padding:16px 22px}.tbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;font-size:13.5px;color:var(--ink2)}
+.tbs b{font-family:'JetBrains Mono';color:var(--blue);margin-right:6px}
+table.stride td:first-child{white-space:nowrap}
+.sl{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;font:700 12px 'JetBrains Mono';margin-right:10px}
+.sl.b{background:var(--blue-bg);color:var(--blue)}.sl.o{background:var(--org-bg);color:var(--org)}.sl.v{background:var(--vio-bg);color:var(--vio)}.sl.r{background:var(--red-bg);color:var(--red)}
+
+.dfdh{font-size:17px;font-weight:800;margin:26px 0 4px}
+.dfd{padding:8px 8px 0}.dfd svg{width:100%;height:auto;display:block}
+.ext{fill:#fff;stroke:#0f172a;stroke-width:1.6}.proc{fill:#eff6ff;stroke:#2563eb;stroke-width:1.6}.st2{stroke:#0f172a;stroke-width:1.6}
+.nn{font:800 15px Manrope;fill:#0f172a}.ns{font:500 11px 'JetBrains Mono';fill:#94a3b8}
+.fl{fill:none;stroke:#64748b;stroke-width:1.6}.fll{font:500 11.5px 'JetBrains Mono';fill:#475569}
+.tbl{stroke:#94a3b8;stroke-width:1.6;stroke-dasharray:6 5}.tbl.red{stroke:#ef4444;stroke-width:2}
+.tbr{fill:none;stroke:#94a3b8;stroke-width:1.4;stroke-dasharray:6 5}
+.tbt{font:700 11px 'JetBrains Mono';letter-spacing:.1em;fill:#64748b}
+.tm{cursor:pointer}.tm text{font:700 10px 'JetBrains Mono';fill:#fff;pointer-events:none}
+.tm:hover circle,.tm:focus circle{stroke:#0f172a;stroke-width:2.5}
+.lg{display:inline-block;width:20px;height:12px;margin-right:7px;vertical-align:middle}
+.lg.ext{border:1.6px solid #0f172a}.lg.proc{border:1.6px solid #2563eb;background:#eff6ff;border-radius:6px}
+.lg.st{border-top:1.6px solid #0f172a;border-bottom:1.6px solid #0f172a}.lg.tb{border:1.6px dashed #94a3b8}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.tid{color:var(--ink);font-weight:600}
+tr.hl td{background:#fff7ed!important;transition:background .3s}
+
+/* ===== BLUEPRINT THEME ===== */
+html[data-theme=blueprint]{--bg:#0d3b7a;--card:rgba(255,255,255,.04);--ink:#f1f6ff;--ink2:#c3d6f5;--mute:#8fb0e0;--line:rgba(200,220,255,.35);--blue:#9cd3ff;--blue-bg:rgba(156,211,255,.12);--org:#ffd27a;--org-bg:rgba(255,210,122,.12);--red:#ff9a9a;--red-bg:rgba(255,154,154,.12);--grn:#9df0c0;--grn-bg:rgba(157,240,192,.12);--vio:#d4b8ff;--vio-bg:rgba(212,184,255,.12)}
+html[data-theme=blueprint] body{background-color:#0d3b7a;background-image:
+ linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px),
+ linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+ background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+html[data-theme=blueprint] h1,html[data-theme=blueprint] h2,html[data-theme=blueprint] h3,html[data-theme=blueprint] h4{font-family:'JetBrains Mono',monospace;letter-spacing:-.01em}
+html[data-theme=blueprint] .card{background:rgba(13,59,122,.6);border:1px solid rgba(200,220,255,.45);box-shadow:none;border-radius:4px}
+html[data-theme=blueprint] a{color:#9cd3ff;border-color:rgba(156,211,255,.4)}
+html[data-theme=blueprint] code{background:rgba(255,255,255,.08);border-color:rgba(200,220,255,.3);color:#f1f6ff}
+html[data-theme=blueprint] th{background:rgba(255,255,255,.04)}
+html[data-theme=blueprint] .payload{background:rgba(255,255,255,.05)}
+html[data-theme=blueprint] pre{background:rgba(3,20,50,.7);border:1px solid rgba(200,220,255,.3)}
+html[data-theme=blueprint] .steps button:hover{background:rgba(255,255,255,.05)}
+html[data-theme=blueprint] .lang{background:#0d3b7a;border-color:rgba(200,220,255,.45)}
+html[data-theme=blueprint] .lang button.on{background:#f1f6ff;color:#0d3b7a}
+html[data-theme=blueprint] tr.hl td{background:rgba(255,210,122,.15)!important}
+/* svg: diagram */
+html[data-theme=blueprint] .zone-c,html[data-theme=blueprint] .zone-r{fill:rgba(255,255,255,.03);stroke:rgba(200,220,255,.55);stroke-dasharray:2 4}
+html[data-theme=blueprint] .nd rect,html[data-theme=blueprint] .ext,html[data-theme=blueprint] .dfd svg rect[fill="#fff"]{fill:#0f4389;stroke:#e6f0ff}
+html[data-theme=blueprint] .proc{fill:rgba(156,211,255,.12);stroke:#9cd3ff}
+html[data-theme=blueprint] .st2{stroke:#e6f0ff}
+html[data-theme=blueprint] .nt,html[data-theme=blueprint] .nn{fill:#f1f6ff;font-family:'JetBrains Mono'}
+html[data-theme=blueprint] .nd2,html[data-theme=blueprint] .fll{fill:#c3d6f5}
+html[data-theme=blueprint] .nk,html[data-theme=blueprint] .ns,html[data-theme=blueprint] .tbt{fill:#8fb0e0}
+html[data-theme=blueprint] .wire,html[data-theme=blueprint] .fl{stroke:rgba(230,240,255,.6)}
+html[data-theme=blueprint] .tbl,html[data-theme=blueprint] .tbr{stroke:rgba(230,240,255,.55)}
+html[data-theme=blueprint] .tag rect{fill:rgba(255,255,255,.08)}html[data-theme=blueprint] .tag text{fill:#e6f0ff}
+html[data-theme=blueprint] .dg svg rect[fill="#fff"]{fill:#0d3b7a}
+html[data-theme=blueprint] .lg.ext,html[data-theme=blueprint] .lg.st{border-color:#e6f0ff}
+html[data-theme=blueprint] marker path{fill:#e6f0ff}
+.lang .sep{width:1px;background:var(--line);margin:3px 4px}
+
+/* ===== BLUEPRINT v2: монохром + один акцент ===== */
+html[data-theme=blueprint]{--bp:#1b4f8f;--bp-ink:#ffffff;--bp-line:rgba(255,255,255,.75);--bp-soft:rgba(255,255,255,.5);--bp-acc:#ffcf5c;--bp-warn:#ffb4a8;
+ --bg:#1b4f8f;--ink:#fff;--ink2:rgba(255,255,255,.82);--mute:rgba(255,255,255,.6);--line:rgba(255,255,255,.35);
+ --blue:#fff;--blue-bg:rgba(255,255,255,.1);--org:#ffcf5c;--org-bg:rgba(255,207,92,.14);--red:#ffb4a8;--red-bg:rgba(255,180,168,.14);--grn:#c9f2ff;--grn-bg:rgba(201,242,255,.12);--vio:#e3dcff;--vio-bg:rgba(227,220,255,.12)}
+html[data-theme=blueprint] body{background-color:#1b4f8f}
+html[data-theme=blueprint] .card{background:transparent;border:1.5px solid rgba(255,255,255,.55)}
+/* зоны и подписи зон */
+html[data-theme=blueprint] .zone-c,html[data-theme=blueprint] .zone-r,html[data-theme=blueprint] .zone-a,html[data-theme=blueprint] .zone-b{fill:none;stroke:rgba(255,255,255,.6);stroke-dasharray:3 5}
+html[data-theme=blueprint] .zl{fill:#fff!important;opacity:.85}
+/* граница: акцент, а не красный */
+html[data-theme=blueprint] .borderline{stroke:var(--bp-acc)}
+html[data-theme=blueprint] .bl{fill:var(--bp-acc)}
+html[data-theme=blueprint] .dg svg rect[stroke="#fecaca"]{fill:#1b4f8f;stroke:var(--bp-acc)}
+html[data-theme=blueprint] .dg svg text[style*="dc2626"]{fill:var(--bp-acc)!important}
+/* узлы: прозрачные, белая линия */
+html[data-theme=blueprint] .nd rect,html[data-theme=blueprint] .ext,html[data-theme=blueprint] .dfd svg rect[fill="#fff"]{fill:#1b4f8f;stroke:#fff;stroke-width:1.5}
+html[data-theme=blueprint] .nd.on rect,html[data-theme=blueprint] .nd.gw.on rect,html[data-theme=blueprint] .nd.br.on rect{stroke:var(--bp-acc);stroke-width:2.5;filter:none}
+html[data-theme=blueprint] .tag rect,html[data-theme=blueprint] .tag.o rect,html[data-theme=blueprint] .tag.g rect,html[data-theme=blueprint] .tag.v rect{fill:none;stroke:rgba(255,255,255,.55)}
+html[data-theme=blueprint] .tag text,html[data-theme=blueprint] .tag.o text,html[data-theme=blueprint] .tag.g text,html[data-theme=blueprint] .tag.v text{fill:#fff}
+html[data-theme=blueprint] .nk,html[data-theme=blueprint] .ns,html[data-theme=blueprint] .tbt{fill:rgba(255,255,255,.65)}
+html[data-theme=blueprint] .wire,html[data-theme=blueprint] .fl{stroke:rgba(255,255,255,.7)}
+/* импульсы и легенда: оттенки белого + акцент, а не радуга */
+html[data-theme=blueprint] .pulse[stroke="#dc2626"]{stroke:var(--bp-warn)}
+html[data-theme=blueprint] .pulse[stroke="#16a34a"]{stroke:#c9f2ff}
+html[data-theme=blueprint] .pulse[stroke="#2563eb"]{stroke:#fff}
+html[data-theme=blueprint] .pulse[stroke="#ea7a00"]{stroke:var(--bp-acc)}
+html[data-theme=blueprint] .pulse[stroke="#7c3aed"]{stroke:#e3dcff;stroke-dasharray:10 8}
+html[data-theme=blueprint] .legend i[style*="dc2626"]{background:var(--bp-warn)!important}
+html[data-theme=blueprint] .legend i[style*="16a34a"]{background:#c9f2ff!important}
+html[data-theme=blueprint] .legend i[style*="2563eb"]{background:#fff!important}
+html[data-theme=blueprint] .legend i[style*="ea7a00"]{background:var(--bp-acc)!important}
+html[data-theme=blueprint] .legend i[style*="7c3aed"]{background:#e3dcff!important}
+html[data-theme=blueprint] .legend{color:rgba(255,255,255,.85);border-top-color:rgba(255,255,255,.35)}
+/* DFD: метки угроз в одном стиле */
+html[data-theme=blueprint] .tm circle{fill:#1b4f8f!important;stroke:var(--bp-acc);stroke-width:1.8}
+html[data-theme=blueprint] .tm text{fill:var(--bp-acc)}
+html[data-theme=blueprint] .tm:hover circle{fill:var(--bp-acc)!important}html[data-theme=blueprint] .tm:hover text{fill:#1b4f8f}
+html[data-theme=blueprint] .tbl.red{stroke:var(--bp-acc)}
+html[data-theme=blueprint] .dot{background:var(--bp-acc)!important}
+html[data-theme=blueprint] .proc{fill:rgba(255,255,255,.08);stroke:#fff}
+/* бейджи и метки категорий: контурные */
+html[data-theme=blueprint] .st,html[data-theme=blueprint] .sl,html[data-theme=blueprint] .where{background:transparent!important;border:1px solid currentColor}
+html[data-theme=blueprint] .payload .p{color:var(--bp-warn);background:transparent;border-bottom:1px dashed var(--bp-warn);border-radius:0}
+html[data-theme=blueprint] .payload .m{color:#c9f2ff;background:transparent;border-bottom:1px solid #c9f2ff;border-radius:0}
+html[data-theme=blueprint] .steps button.on{background:rgba(255,255,255,.1);border-left-color:var(--bp-acc)}
+html[data-theme=blueprint] .modes .a,html[data-theme=blueprint] .modes .b{border-top-color:var(--bp-acc)}
+html[data-theme=blueprint] h1 span{color:var(--bp-acc)}
+
+/* ===== BLUEPRINT v3: ярче + фикс кнопок ===== */
+html[data-theme=blueprint]{--bp:#1f63c6;--bp-acc:#ffd60a;--bp-warn:#ff8f7a;--bg:#1f63c6;
+ --org:#ffd60a;--org-bg:rgba(255,214,10,.16);--red:#ff8f7a;--red-bg:rgba(255,143,122,.16);--grn:#7ff0ff;--grn-bg:rgba(127,240,255,.14);--vio:#d9c8ff;--ink2:rgba(255,255,255,.9);--mute:rgba(255,255,255,.72)}
+html[data-theme=blueprint] body{background-color:#1f63c6;background-image:
+ linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px),
+ linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
+ background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+html[data-theme=blueprint] .card{border:1.5px solid rgba(255,255,255,.8);background:rgba(20,80,170,.35)}
+html[data-theme=blueprint] .nd rect,html[data-theme=blueprint] .ext,html[data-theme=blueprint] .dfd svg rect[fill="#fff"],html[data-theme=blueprint] .dg svg rect[stroke="#fecaca"],html[data-theme=blueprint] .tm circle{fill:#1f63c6!important}
+html[data-theme=blueprint] .wire,html[data-theme=blueprint] .fl{stroke:#fff}
+html[data-theme=blueprint] .zone-c,html[data-theme=blueprint] .zone-r,html[data-theme=blueprint] .zone-a,html[data-theme=blueprint] .zone-b{stroke:#fff}
+html[data-theme=blueprint] .pulse{stroke-width:6}
+html[data-theme=blueprint] .pulse[stroke="#dc2626"]{stroke:#ff8f7a}
+html[data-theme=blueprint] .pulse[stroke="#16a34a"]{stroke:#7ff0ff}
+html[data-theme=blueprint] .pulse[stroke="#ea7a00"]{stroke:#ffd60a}
+html[data-theme=blueprint] .pulse[stroke="#7c3aed"]{stroke:#d9c8ff}
+html[data-theme=blueprint] .legend i[style*="dc2626"]{background:#ff8f7a!important}
+html[data-theme=blueprint] .legend i[style*="16a34a"]{background:#7ff0ff!important}
+html[data-theme=blueprint] .legend i[style*="ea7a00"]{background:#ffd60a!important}
+html[data-theme=blueprint] .legend i[style*="7c3aed"]{background:#d9c8ff!important}
+html[data-theme=blueprint] .payload .p{color:#ffb3a5;border-bottom-color:#ff8f7a}
+html[data-theme=blueprint] .payload .m{color:#7ff0ff;border-bottom-color:#7ff0ff}
+/* кнопки плеера: были белым по белому */
+html[data-theme=blueprint] .steps .ctl button{background:transparent;border:1.5px solid rgba(255,255,255,.85);color:#fff}
+html[data-theme=blueprint] .steps .ctl button:hover{background:#fff;color:#1f63c6}
+html[data-theme=blueprint] .steps{border-right-color:rgba(255,255,255,.45)}
+html[data-theme=blueprint] .steps .ctl,html[data-theme=blueprint] .player{border-top-color:rgba(255,255,255,.45)}
+html[data-theme=blueprint] .lang{background:#1f63c6;border-color:rgba(255,255,255,.85)}
+html[data-theme=blueprint] .lang button{color:#fff}
+html[data-theme=blueprint] .lang button.on{background:#fff;color:#1f63c6}
+html[data-theme=blueprint] .payload{background:rgba(10,40,100,.35);border-color:rgba(255,255,255,.5)}
+html[data-theme=blueprint] pre{background:rgba(8,30,80,.75)}
+
+/* ===== BLUEPRINT v4: насыщенно ===== */
+html[data-theme=blueprint]{--bg:#0b57d0;--bp-acc:#ffd400;--bp-warn:#ff5a4e;--org:#ffd400;--red:#ff6f63;--grn:#22e4ff;--vio:#c39bff}
+html[data-theme=blueprint] body{background-color:#0b57d0;background-image:
+ linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px),
+ linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+ background-size:120px 120px,120px 120px,24px 24px,24px 24px}
+html[data-theme=blueprint] .card{background:transparent;border:1.5px solid #fff}
+html[data-theme=blueprint] .nd rect,html[data-theme=blueprint] .ext,html[data-theme=blueprint] .dfd svg rect[fill="#fff"],html[data-theme=blueprint] .dg svg rect[stroke="#fecaca"],html[data-theme=blueprint] .tm circle{fill:#0b57d0!important}
+html[data-theme=blueprint] .lang{background:#0b57d0}
+html[data-theme=blueprint] .lang button.on,html[data-theme=blueprint] .steps .ctl button:hover{color:#0b57d0}
+html[data-theme=blueprint] .legend{color:#fff}
+html[data-theme=blueprint] .legend i{height:5px!important;width:26px!important}
+html[data-theme=blueprint] .pulse[stroke="#dc2626"],html[data-theme=blueprint] .legend i[style*="dc2626"]{stroke:#ff5a4e;background:#ff5a4e!important}
+html[data-theme=blueprint] .pulse[stroke="#16a34a"],html[data-theme=blueprint] .legend i[style*="16a34a"]{stroke:#22e4ff;background:#22e4ff!important}
+html[data-theme=blueprint] .pulse[stroke="#ea7a00"],html[data-theme=blueprint] .legend i[style*="ea7a00"]{stroke:#ffd400;background:#ffd400!important}
+html[data-theme=blueprint] .pulse[stroke="#7c3aed"],html[data-theme=blueprint] .legend i[style*="7c3aed"]{stroke:#c39bff;background:#c39bff!important}
+html[data-theme=blueprint] .payload{background:rgba(0,30,90,.35);border-color:rgba(255,255,255,.7)}
+html[data-theme=blueprint] .payload .p{color:#ff8a80;border-bottom-color:#ff5a4e}
+html[data-theme=blueprint] .payload .m{color:#22e4ff;border-bottom-color:#22e4ff}
+html[data-theme=blueprint] .steps button.on{background:rgba(255,255,255,.16)}
+html[data-theme=blueprint] pre{background:rgba(0,25,80,.8)}
+
+/* ===== FIXES: legend shapes (both themes) ===== */
+.legend i.lg{width:20px!important;height:12px!important;border-radius:0}
+.legend i.lg.proc{border-radius:6px}
+.legend i.dot{width:11px!important;height:11px!important;border-radius:50%}
+/* ===== BLUEPRINT: remaining elements ===== */
+html[data-theme=blueprint] .lg.proc{border-color:#fff;background:rgba(255,255,255,.12)}
+html[data-theme=blueprint] .lg.tb{border-color:#fff}
+html[data-theme=blueprint] .lg.ext,html[data-theme=blueprint] .lg.st{border-color:#fff}
+html[data-theme=blueprint] .tm:hover circle,html[data-theme=blueprint] .tm:focus circle{fill:#ffd400!important;stroke:#ffd400}
+html[data-theme=blueprint] .tm:hover text,html[data-theme=blueprint] .tm:focus text{fill:#0b57d0}
+html[data-theme=blueprint] .tbr,html[data-theme=blueprint] .tbl{stroke:#fff;opacity:.85}
+html[data-theme=blueprint] .tbl.red{stroke:#ffd400;opacity:1}
+html[data-theme=blueprint] .tbt{fill:#fff}
+html[data-theme=blueprint] .fll{fill:#fff}
+html[data-theme=blueprint] marker path{fill:#fff}
+html[data-theme=blueprint] th{background:rgba(0,30,90,.3);color:#fff;border-bottom-color:rgba(255,255,255,.6)}
+html[data-theme=blueprint] td{border-bottom-color:rgba(255,255,255,.3)}
+html[data-theme=blueprint] tr.hl td{background:rgba(255,212,0,.22)!important}
+html[data-theme=blueprint] .st.never{color:#22e4ff}html[data-theme=blueprint] .st.yes{color:#ffd400}html[data-theme=blueprint] .st.q{color:#ff8a80}html[data-theme=blueprint] .st.no{color:#22e4ff}
+html[data-theme=blueprint] .sl.b{color:#fff}html[data-theme=blueprint] .sl.o{color:#ffd400}html[data-theme=blueprint] .sl.v{color:#c39bff}html[data-theme=blueprint] .sl.r{color:#ff8a80}
+html[data-theme=blueprint] .k.b{color:#fff}html[data-theme=blueprint] .k.o{color:#ffd400}html[data-theme=blueprint] .k.r{color:#ff8a80}html[data-theme=blueprint] .k.g{color:#22e4ff}html[data-theme=blueprint] .k.v{color:#c39bff}
+html[data-theme=blueprint] .where.in{color:#22e4ff}html[data-theme=blueprint] .where.out{color:#ffd400}
+html[data-theme=blueprint] .comp li{border-top-color:rgba(255,255,255,.3)}
+html[data-theme=blueprint] .modes .a{border-top-color:#22e4ff}html[data-theme=blueprint] .modes .b{border-top-color:#c39bff}
+html[data-theme=blueprint] pre{border-color:rgba(255,255,255,.5)}
+html[data-theme=blueprint] pre .c{color:#9fb6d8}html[data-theme=blueprint] pre .s{color:#7dffb0}html[data-theme=blueprint] pre .k2{color:#8fd3ff}
+html[data-theme=blueprint] code{background:rgba(0,30,90,.4);border-color:rgba(255,255,255,.45)}
+html[data-theme=blueprint] a{color:#fff;border-bottom-color:rgba(255,255,255,.6)}
+html[data-theme=blueprint] a:hover{color:#ffd400;border-color:#ffd400}
+html[data-theme=blueprint] .foot{border-top-color:rgba(255,255,255,.4)}
+html[data-theme=blueprint] .eyebrow{color:#ffd400}
+</style></head>
+<body><div class="lang"><button data-l="en">EN</button><button data-l="ru">RU</button><span class="sep"></span><button data-th="light">Light</button><button data-th="blueprint">Blueprint</button></div><div class="wrap">
+
+<div class="ru-only"><header>
+ <div>
+  <div class="eyebrow">REFERENCE PATTERN · DATA RESIDENCY · GENAI</div>
+  <h1>In-country DLP Gateway <span>→ Amazon Bedrock</span></h1>
+  <p class="lead">Для стран без региона AWS. Приложения заказчика ходят к frontier-моделям Bedrock только через локальный шлюз. Он находит и маскирует персональные данные до того, как запрос пересечёт границу, и пишет аудит того, что ушло наружу.</p>
+ </div>
+ <div class="meta"><b>Стек:</b> LiteLLM proxy · Presidio · Amazon Bedrock<br><b>Размещение:</b> on-prem / AWS Outposts<br><b>Канал:</b> Direct Connect или VPN → PrivateLink</div>
+</header></div><div class="en-only"><header>
+ <div>
+  <div class="eyebrow">REFERENCE PATTERN · DATA RESIDENCY · GENAI</div>
+  <h1>In-country DLP Gateway <span>→ Amazon Bedrock</span></h1>
+  <p class="lead">For countries without an AWS Region. Customer applications reach Bedrock frontier models only through a local gateway. It detects and masks personal data before a request crosses the border and keeps an audit trail of what left the country.</p>
+ </div>
+ <div class="meta"><b>Stack:</b> LiteLLM proxy · Presidio · Amazon Bedrock<br><b>Placement:</b> on-prem / AWS Outposts<br><b>Link:</b> Direct Connect or VPN → PrivateLink</div>
+</header></div>
+
+<!-- DIAGRAM -->
+<div class="card diagram">
+ <div class="dg">
+ <svg viewBox="0 0 1344 560" preserveAspectRatio="xMidYMid meet">
+  <rect class="zone-c" x="20" y="34" width="870" height="506" rx="22"></rect>
+  <text class="zl" x="44" y="62" fill="#2563eb" data-ru="СТРАНА ЗАКАЗЧИКА · ON-PREM / OUTPOST" data-en="CUSTOMER COUNTRY · ON-PREM / OUTPOST">СТРАНА ЗАКАЗЧИКА · ON-PREM / OUTPOST</text>
+  <rect class="zone-r" x="990" y="34" width="334" height="506" rx="22"></rect>
+  <text class="zl" x="1014" y="62" fill="#ea7a00">AWS REGION</text>
+  <line class="borderline" x1="940" y1="20" x2="940" y2="548"></line>
+  <text class="bl" x="940" y="16" text-anchor="middle" data-ru="ГРАНИЦА" data-en="BORDER">ГРАНИЦА</text>
+  <rect x="900" y="232" width="80" height="22" rx="11" fill="#fff" stroke="#fecaca"></rect>
+  <text x="940" y="247" text-anchor="middle" class="mono" style="font-size:10px;fill:#dc2626">DX / VPN</text>
+
+  <!-- wires -->
+  <path class="wire" d="M250 196 H345"></path>
+  <path class="wire" d="M345 236 H250"></path>
+  <path class="wire" d="M640 196 H1030"></path>
+  <path class="wire" d="M1030 236 H640"></path>
+  <path class="wire d" d="M440 300 V380"></path>
+  <path class="wire d" d="M560 300 V380"></path>
+  <path class="wire d" d="M610 300 C700 330 730 350 735 380"></path>
+  <path class="wire d" d="M1130 300 V380"></path>
+
+  <!-- pulses -->
+  <path id="p1" class="pulse" stroke="#dc2626" d="M250 196 H345"></path>
+  <path id="p2" class="pulse" stroke="#16a34a" d="M440 300 V380"></path>
+  <path id="p3" class="pulse" stroke="#2563eb" d="M640 196 H1030"></path>
+  <path id="p4" class="pulse" stroke="#ea7a00" d="M1030 236 H640"></path>
+  <path id="p5" class="pulse" stroke="#7c3aed" d="M610 300 C700 330 730 350 735 380"></path>
+  <path id="p6" class="pulse" stroke="#16a34a" d="M345 236 H250"></path>
+
+  <!-- app -->
+  <g class="nd" id="n-app"><rect x="44" y="140" width="206" height="150" rx="16"></rect>
+   <text class="nk" x="62" y="166">01 · CLIENT</text><text class="nt" x="62" y="192" data-ru="Приложения" data-en="Applications">Приложения</text>
+   <text class="nd2" x="62" y="214" data-ru="CRM, бэк-офис," data-en="CRM, back office,">CRM, бэк-офис,</text><text class="nd2" x="62" y="231" data-ru="чат-боты, агенты" data-en="chatbots, agents">чат-боты, агенты</text>
+   <g class="tag"><rect x="62" y="248" width="150" height="22" rx="6"></rect><text x="70" y="263">OpenAI-compatible API</text></g></g>
+
+  <!-- gateway -->
+  <g class="nd gw" id="n-gw"><rect x="345" y="110" width="295" height="190" rx="16"></rect>
+   <text class="nk" x="365" y="136">02 · GATEWAY</text><text class="nt" x="365" y="162">LiteLLM proxy</text>
+   <text class="nd2" x="365" y="184" data-ru="Единая точка выхода к LLM." data-en="Single egress point to LLMs.">Единая точка выхода к LLM.</text>
+   <text class="nd2" x="365" y="201" data-ru="pre_call: маскирование ПД в промпте" data-en="pre_call: mask PII in the prompt">pre_call: маскирование ПД в промпте</text>
+   <text class="nd2" x="365" y="218" data-ru="post_call: проверка ответа модели" data-en="post_call: check the model response">post_call: проверка ответа модели</text>
+   <g class="tag g"><rect x="365" y="234" width="104" height="22" rx="6"></rect><text x="373" y="249">Presidio PII</text></g>
+   <g class="tag g"><rect x="475" y="234" width="118" height="22" rx="6"></rect><text x="483" y="249">custom: NATIONAL_ID</text></g>
+   <g class="tag"><rect x="365" y="262" width="92" height="22" rx="6"></rect><text x="373" y="277">virtual keys</text></g>
+   <g class="tag"><rect x="463" y="262" width="90" height="22" rx="6"></rect><text x="471" y="277">rate limits</text></g>
+   <g class="tag"><rect x="559" y="262" width="66" height="22" rx="6"></rect><text x="567" y="277">budget</text></g></g>
+
+  <!-- presidio / log / vault -->
+  <g class="nd" id="n-pr"><rect x="44" y="380" width="230" height="130" rx="16"></rect>
+   <text class="nk" x="62" y="406">02a · DETECT</text><text class="nt" x="62" y="430">Presidio</text>
+   <text class="nd2" x="62" y="452">Analyzer: regex + NER</text><text class="nd2" x="62" y="469" data-ru="Anonymizer: операторы" data-en="Anonymizer: operators">Anonymizer: операторы</text>
+   <text class="nd2" x="62" y="486" data-ru="отдельные контейнеры" data-en="separate containers">отдельные контейнеры</text></g>
+  <path class="wire d" d="M274 445 C320 445 330 300 400 300"></path>
+
+  <g class="nd" id="n-log"><rect x="340" y="380" width="250" height="130" rx="16"></rect>
+   <text class="nk" x="358" y="406">03 · AUDIT</text><text class="nt" x="358" y="430" data-ru="Локальный аудит" data-en="Local audit">Локальный аудит</text>
+   <text class="nd2" x="358" y="452" data-ru="типы найденных сущностей," data-en="detected entity types,">типы найденных сущностей,</text><text class="nd2" x="358" y="469" data-ru="хеш исходного промпта," data-en="hash of the original prompt,">хеш исходного промпта,</text>
+   <text class="nd2" x="358" y="486" data-ru="что ушло за границу" data-en="what crossed the border">что ушло за границу</text></g>
+
+  <g class="nd" id="n-map"><rect x="620" y="380" width="250" height="130" rx="16"></rect>
+   <text class="nk" x="638" y="406">OPT · VAULT</text><text class="nt" x="638" y="430" data-ru="Ключ / карта токенов" data-en="Key / token map">Ключ / карта токенов</text>
+   <text class="nd2" x="638" y="452" data-ru="только для обратимого" data-en="reversible mode only,">только для обратимого</text><text class="nd2" x="638" y="469" data-ru="режима, хранится в стране" data-en="stored in-country">режима, хранится в стране</text>
+   <g class="tag v"><rect x="638" y="480" width="160" height="22" rx="6"></rect><text x="646" y="495">encrypt / deanonymize</text></g></g>
+
+  <!-- bedrock -->
+  <g class="nd br" id="n-br"><rect x="1030" y="110" width="270" height="190" rx="16"></rect>
+   <text class="nk" x="1050" y="136">04 · MODEL</text><text class="nt" x="1050" y="162">Amazon Bedrock</text>
+   <text class="nd2" x="1050" y="184" data-ru="Frontier-модели в регионе." data-en="Frontier models in Region.">Frontier-модели в регионе.</text>
+   <text class="nd2" x="1050" y="201" data-ru="Вызов через Converse API," data-en="Called via Converse API,">Вызов через Converse API,</text>
+   <text class="nd2" x="1050" y="218" data-ru="IAM-роль шлюза." data-en="gateway IAM role.">IAM-роль шлюза.</text>
+   <g class="tag o"><rect x="1050" y="234" width="112" height="22" rx="6"></rect><text x="1058" y="249">bedrock/ route</text></g>
+   <g class="tag o"><rect x="1168" y="234" width="104" height="22" rx="6"></rect><text x="1176" y="249">PrivateLink</text></g></g>
+
+  <g class="nd" id="n-gr"><rect x="1030" y="380" width="270" height="130" rx="16"></rect>
+   <text class="nk" x="1050" y="406">05 · SECOND LINE</text><text class="nt" x="1050" y="430">Bedrock Guardrails</text>
+   <text class="nd2" x="1050" y="452">PII + regex filters,</text><text class="nd2" x="1050" y="469">ApplyGuardrail API.</text>
+   <text class="nd2" x="1050" y="486" data-ru="Работает уже в регионе." data-en="Runs inside the Region.">Работает уже в регионе.</text></g>
+ </svg>
+ </div>
+ <div class="legend">
+  <span><i style="background:#dc2626"></i><span data-ru="сырые ПД (только внутри страны)" data-en="raw PII (in-country only)">сырые ПД (только внутри страны)</span></span>
+  <span><i style="background:#16a34a"></i><span data-ru="детекция и маскирование" data-en="detection and masking">детекция и маскирование</span></span>
+  <span><i style="background:#2563eb"></i><span data-ru="очищенный промпт через границу" data-en="sanitized prompt across the border">очищенный промпт через границу</span></span>
+  <span><i style="background:#ea7a00"></i><span data-ru="ответ модели" data-en="model response">ответ модели</span></span>
+  <span><i style="background:#7c3aed"></i><span data-ru="обратная подстановка (опционально)" data-en="re-identification (optional)">обратная подстановка (опционально)</span></span>
+ </div>
+ <div class="player">
+  <div class="steps" id="steps"></div>
+  <div class="view">
+   <div class="vlabel" id="vl"></div>
+   <div class="payload" id="pl"></div>
+   <div class="vdesc" id="vd"></div>
+  </div>
+ </div>
+</div>
+
+<div class="ru-only"><!-- COMPONENTS -->
+<h2>Компоненты</h2>
+<p class="h2sub">Всё в стране заказчика разворачивается контейнерами на обычных VM, в Kubernetes или на AWS Outposts. GPU не нужен: локально нет инференса LLM, только детекция ПД.</p>
+<div class="g3">
+ <div class="card comp"><div class="k b">GATEWAY</div><h3>LiteLLM proxy</h3>
+  <p>Self-hosted шлюз с OpenAI-совместимым API. Приложения получают виртуальные ключи шлюза, а не доступ к AWS.</p>
+  <ul><li>Режимы Presidio guardrail: <code>pre_call</code>, <code>during_call</code>, <code>post_call</code>, <code>logging_only</code>, <code>pre_mcp_call</code>; действия MASK или BLOCK по типу сущности</li>
+  <li>Отдельный endpoint для вызова guardrail напрямую из других сервисов</li>
+  <li>Тот же механизм применим к вызовам MCP-инструментов</li></ul>
+  <div class="links"><a target="_blank" href="https://docs.litellm.ai/docs/proxy/guardrails/pii_masking_v2">Presidio guardrail</a><a target="_blank" href="https://docs.litellm.ai/docs/apply_guardrail">apply_guardrail</a><a target="_blank" href="https://docs.litellm.ai/docs/mcp_guardrail">MCP guardrails</a></div></div>
+
+ <div class="card comp"><div class="k g">DETECTION</div><h3>Presidio Analyzer</h3>
+  <p>Находит сущности в тексте с помощью regex, NER и контекстных слов, у каждого срабатывания своя оценка уверенности.</p>
+  <ul><li>Встроенные распознаватели: имена, email, телефоны, карты и другие</li>
+  <li>Свои распознаватели под страну: национальные ID, номера документов, внутренние ID. Нужны паттерн, контекст, контрольная сумма, где она есть</li>
+  <li>Порог уверенности и allow-list настраиваются, чтобы не резать публичные данные</li></ul>
+  <div class="links"><a target="_blank" href="https://github.com/microsoft/presidio/blob/main/docs/analyzer/index.md">Analyzer</a><a target="_blank" href="https://github.com/microsoft/presidio/blob/main/docs/analyzer/developing_recognizers.md">Developing recognizers</a></div></div>
+
+ <div class="card comp"><div class="k g">ANONYMIZATION</div><h3>Presidio Anonymizer</h3>
+  <p>Для каждого типа сущности задаётся оператор. По умолчанию значение заменяется на имя типа, например <code>&lt;PERSON&gt;</code>.</p>
+  <ul><li><code>replace</code>, <code>redact</code>, <code>mask</code>, <code>hash</code>: необратимо</li>
+  <li><code>encrypt</code> + deanonymize: обратимо, ключ остаётся в стране</li>
+  <li>Готовый псевдонимизатор для LiteLLM от сообщества: подменяет имена на вымышленные и возвращает оригиналы в ответе</li></ul>
+  <div class="links"><a target="_blank" href="https://github.com/microsoft/presidio/blob/main/docs/anonymizer/index.md">Anonymizer</a><a target="_blank" href="https://github.com/microsoft/presidio/blob/main/docs/tutorial/10_simple_anonymization.md">Operators</a><a target="_blank" href="https://github.com/PalenaAI/palena-litellm-pseudonymizer">palena-litellm-pseudonymizer</a></div></div>
+
+ <div class="card comp"><div class="k o">MODEL</div><h3>Amazon Bedrock</h3>
+  <p>LiteLLM вызывает Bedrock через провайдер <code>bedrock/</code> (Converse, Invoke и другие маршруты). Авторизация через boto3: IAM-роль или профиль шлюза.</p>
+  <ul><li>Приложения не получают AWS-креды, доступ к моделям только у шлюза</li>
+  <li>Список моделей и регионов определяется политикой шлюза</li></ul>
+  <div class="links"><a target="_blank" href="https://docs.litellm.ai/docs/providers/bedrock">LiteLLM: Bedrock provider</a><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints-region-availability.html">Bedrock endpoints by Region</a></div></div>
+
+ <div class="card comp"><div class="k o">NETWORK</div><h3>Канал до региона</h3>
+  <p>Direct Connect или Site-to-Site VPN до VPC в регионе, дальше interface endpoint Bedrock. Трафик к моделям не идёт через интернет.</p>
+  <ul><li>Исходящий доступ шлюза разрешён только на endpoint Bedrock</li>
+  <li>Приложениям прямой выход к LLM-провайдерам закрыт на периметре</li></ul>
+  <div class="links"><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/vpc-interface-endpoints.html">Bedrock + PrivateLink</a><a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-interface-endpoint.html">Interface endpoints</a></div></div>
+
+ <div class="card comp"><div class="k o">SECOND LINE</div><h3>Bedrock Guardrails</h3>
+  <p>Sensitive information filters находят PII и свои regex-паттерны в промпте и ответе. Можно вызывать отдельно через <code>ApplyGuardrail</code>.</p>
+  <ul><li>Выполняется в регионе, то есть видит уже очищенный промпт</li>
+  <li>Подходит как контроль того, что локальная маскировка ничего не пропустила, и как фильтр ответов</li><li>Prompt attack filter: jailbreak, prompt injection и prompt leakage (последний только в Standard tier)</li></ul>
+  <div class="links"><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html">PII filters</a><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-use-independent-api.html">ApplyGuardrail</a><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-prompt-attack.html">Prompt attacks</a></div></div>
+</div>
+
+<!-- WHAT CROSSES -->
+<h2>Что пересекает границу</h2>
+<p class="h2sub">Главная таблица для разговора с безопасностью и юристами заказчика.</p>
+<div class="card" style="overflow:hidden"><table>
+ <tbody><tr><th>ДАННЫЕ</th><th>ГДЕ ОБРАБАТЫВАЮТСЯ</th><th>ГРАНИЦА</th><th>КОММЕНТАРИЙ</th></tr>
+ <tr><td>Исходный промпт с ПД</td><td>Приложение → шлюз</td><td><span class="st never">НЕ ПЕРЕСЕКАЕТ</span></td><td>Остаётся внутри страны, в аудит пишется только хеш</td></tr>
+ <tr><td>Найденные значения ПД</td><td>Presidio, память шлюза</td><td><span class="st never">НЕ ПЕРЕСЕКАЕТ</span></td><td>В лог пишутся типы сущностей и позиции, не значения</td></tr>
+ <tr><td>Очищенный промпт</td><td>Bedrock в регионе</td><td><span class="st yes">ПЕРЕСЕКАЕТ</span></td><td>Содержит плейсхолдеры вместо ПД. Косвенные признаки в тексте могут остаться</td></tr>
+ <tr><td>Ответ модели</td><td>Bedrock → шлюз</td><td><span class="st yes">ВОЗВРАЩАЕТСЯ</span></td><td>Проходит post_call проверку, при обратимом режиме плейсхолдеры подставляются обратно</td></tr>
+ <tr><td>Ключ / карта токенов</td><td>Vault в стране</td><td><span class="st never">НЕ ПЕРЕСЕКАЕТ</span></td><td>Только в обратимом режиме</td></tr>
+ <tr><td>Метрики и логи Bedrock</td><td>CloudWatch / CloudTrail в регионе</td><td><span class="st q">НАСТРОИТЬ</span></td><td><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html">Invocation logging</a> по умолчанию выключен. Если включить, полные запросы и ответы пишутся в CloudWatch Logs или S3 того же аккаунта и региона</td></tr>
+</tbody></table></div>
+
+<!-- MODES -->
+<h2>Два режима маскирования</h2>
+<p class="h2sub">Выбор режима определяет, что именно уходит в регион. Оценку достаточности каждого режима для местного закона делает юридическая служба заказчика.</p>
+<div class="g2 modes">
+ <div class="card comp a"><div class="k g">РЕЖИМ A · НЕОБРАТИМЫЙ</div><h3>Редакция / замена</h3>
+  <div class="kv"><div>ОПЕРАТОРЫ</div><div><code>replace</code>, <code>redact</code>, <code>mask</code></div>
+  <div>В РЕГИОН</div><div>Клиент &lt;PERSON&gt;, ID &lt;NATIONAL_ID&gt; просит...</div>
+  <div>ОТВЕТ</div><div>Приходит с плейсхолдерами, приложение подставляет данные само, если нужно</div>
+  <div>ПЛЮСЫ</div><div>Связи между токенами и людьми нет нигде, проще аудит</div>
+  <div>МИНУСЫ</div><div>Модель хуже работает, если задача зависит от конкретных значений</div></div></div>
+ <div class="card comp b"><div class="k v">РЕЖИМ B · ОБРАТИМЫЙ</div><h3>Псевдонимизация</h3>
+  <div class="kv"><div>ОПЕРАТОРЫ</div><div><code>encrypt</code> + deanonymize, или стабильные вымышленные имена</div>
+  <div>В РЕГИОН</div><div>Клиент Person_7f3a (или "Мария Иванова") просит...</div>
+  <div>ОТВЕТ</div><div>Шлюз подставляет оригиналы, пользователь видит реальные имена</div>
+  <div>ПЛЮСЫ</div><div>Естественный UX, модель сохраняет связи между сущностями</div>
+  <div>МИНУСЫ</div><div>Псевдонимизированные данные, как правило, продолжают считаться персональными. Требует хранения ключа</div></div></div>
+</div>
+
+<!-- CONFIG -->
+<h2>Набросок конфигурации шлюза</h2>
+<p class="h2sub">Параметры сверены с <a target="_blank" href="https://docs.litellm.ai/docs/proxy/guardrails/pii_masking_v2">документацией LiteLLM</a> на 07.10.2026. Это не готовый к продакшну файл: перед внедрением проверить для используемой версии.</p>
+<div class="g2">
+<pre><span class="c"># litellm config.yaml</span>
+<span class="k2">model_list:</span>
+  - <span class="k2">model_name:</span> <span class="s">frontier</span>
+    <span class="k2">litellm_params:</span>
+      <span class="k2">model:</span> <span class="s">bedrock/&lt;model-id&gt;</span>
+      <span class="k2">aws_region_name:</span> <span class="s">&lt;region&gt;</span>
+      <span class="c"># креды: IAM-роль хоста шлюза</span>
+
+<span class="k2">guardrails:</span>
+  - <span class="k2">guardrail_name:</span> <span class="s">"presidio-pii"</span>
+    <span class="k2">litellm_params:</span>
+      <span class="k2">guardrail:</span> <span class="s">presidio</span>
+      <span class="k2">mode:</span> <span class="s">"pre_call"</span>
+      <span class="k2">presidio_filter_scope:</span> <span class="s">both</span>   <span class="c"># input | output | both</span>
+      <span class="k2">presidio_language:</span> <span class="s">"en"</span>       <span class="c"># ru/kk: нужна NLP-модель в Analyzer</span>
+      <span class="k2">presidio_score_thresholds:</span>
+        <span class="k2">ALL:</span> <span class="s">0.7</span>
+      <span class="k2">output_parse_pii:</span> <span class="s">true</span>        <span class="c"># только режим B: вернуть оригиналы</span>
+
+<span class="c"># адреса Presidio задаются переменными окружения</span>
+<span class="c"># PRESIDIO_ANALYZER_API_BASE, PRESIDIO_ANONYMIZER_API_BASE</span>
+<span class="c"># источник: docs.litellm.ai, PII Masking - Presidio</span></pre>
+<pre><span class="c"># свой распознаватель национального ID (Python, Presidio)</span>
+<span class="k2">from</span> presidio_analyzer <span class="k2">import</span> Pattern, PatternRecognizer
+
+national_id = PatternRecognizer(
+    supported_entity=<span class="s">"NATIONAL_ID"</span>,
+    patterns=[Pattern(<span class="s">"national_id"</span>, <span class="s">r"\bID-\d{4}-\d{4}\b"</span>, 0.3)],
+    context=[<span class="s">"national id"</span>, <span class="s">"ID"</span>],
+)
+<span class="c"># короткие цифровые паттерны без контекста дают много ложных
+# срабатываний: оценку поднимают контекстные
+# слова и проверка контрольной цифры
+# (validate_result), её логику брать из
+# официальной спецификации формата ID</span></pre>
+</div>
+
+<h2>STRIDE: модель угроз шлюза</h2><p class="h2sub">Угрозы разобраны по категориям <a target="_blank" href="https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats">STRIDE</a> для границ доверия схемы выше. LLM-специфичные пункты сопоставлены с <a target="_blank" href="https://genai.owasp.org/llm-top-10/">OWASP Top 10 for LLM Applications 2025</a>; на 07.10.2026 на genai.owasp.org опубликована именно эта версия. Это стартовый список для воркшопа с безопасностью заказчика, не полная модель.</p><div class="card tbx"><div class="k b mono" style="margin-bottom:10px">ГРАНИЦЫ ДОВЕРИЯ</div><div class="tbs"><div><b>TB1</b> Приложение → шлюз</div><div><b>TB2</b> Шлюз → Presidio / аудит / vault</div><div><b>TB3</b> Шлюз → Bedrock (граница страны)</div><div><b>TB4</b> Администраторы шлюза и CI/CD</div></div></div><h3 class="dfdh">Диаграмма потоков данных с угрозами</h3>
+<p class="h2sub">Нотация как в Microsoft Threat Modeling Tool: внешние сущности, процессы, хранилища, границы доверия. Красные метки - угрозы из таблицы ниже, наведите или нажмите.</p>
+<div class="card dfd"><svg viewBox="0 0 1344 470">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#64748b"></path></marker></defs>
+<line x1="1040" y1="14" x2="1040" y2="456" class="tbl red"></line>
+<text x="1050" y="32" class="tbt" fill="#dc2626">TB3 · ГРАНИЦА СТРАНЫ</text>
+<line x1="320" y1="150" x2="320" y2="300" class="tbl"></line><text x="328" y="296" class="tbt">TB1</text>
+<line x1="300" y1="20" x2="300" y2="135" class="tbl"></line><text x="250" y="32" class="tbt">TB4</text>
+<rect x="392" y="342" width="590" height="104" rx="14" class="tbr"></rect><text x="404" y="440" class="tbt">TB2</text>
+<rect x="742" y="44" width="236" height="96" rx="14" class="tbr"></rect><text x="752" y="134" class="tbt">TB2</text>
+<rect x="40" y="40" width="190" height="64" class="ext"></rect><text x="135.0" y="69.0" class="nn" text-anchor="middle">Админы, CI/CD</text><text x="135.0" y="87.0" class="ns" text-anchor="middle">внешняя сущность</text>
+<rect x="40" y="200" width="190" height="80" class="ext"></rect><text x="135.0" y="237.0" class="nn" text-anchor="middle">Приложения</text><text x="135.0" y="255.0" class="ns" text-anchor="middle">внешняя сущность</text>
+<rect x="420" y="180" width="240" height="110" rx="55.0" class="proc"></rect><text x="540.0" y="232.0" class="nn" text-anchor="middle">Шлюз LiteLLM</text><text x="540.0" y="250.0" class="ns" text-anchor="middle">процесс</text>
+<rect x="420" y="362" width="240" height="64" rx="32.0" class="proc"></rect><text x="540.0" y="391.0" class="nn" text-anchor="middle">Presidio</text><text x="540.0" y="409.0" class="ns" text-anchor="middle">процесс</text>
+<rect x="762" y="364" width="200" height="60" fill="#fff"></rect><line x1="762" y1="364" x2="962" y2="364" class="st2"></line><line x1="762" y1="424" x2="962" y2="424" class="st2"></line><text x="862.0" y="391.0" class="nn" text-anchor="middle">Аудит-лог</text><text x="862.0" y="409.0" class="ns" text-anchor="middle">хранилище</text>
+<rect x="762" y="62" width="196" height="60" fill="#fff"></rect><line x1="762" y1="62" x2="958" y2="62" class="st2"></line><line x1="762" y1="122" x2="958" y2="122" class="st2"></line><text x="860.0" y="89.0" class="nn" text-anchor="middle">Ключ / карта</text><text x="860.0" y="107.0" class="ns" text-anchor="middle">хранилище</text>
+<rect x="1120" y="190" width="200" height="90" class="ext"></rect><text x="1220.0" y="232.0" class="nn" text-anchor="middle">Amazon Bedrock</text><text x="1220.0" y="250.0" class="ns" text-anchor="middle">внешняя сущность</text>
+<path d="M230 225 H418" class="fl" marker-end="url(#ar)"></path><text x="236" y="200" class="fll">промпт с ПД</text>
+<path d="M418 255 H232" class="fl" marker-end="url(#ar)"></path><text x="236" y="290" class="fll">ответ</text>
+<path d="M520 292 V360" class="fl" marker-end="url(#ar)"></path><text x="528" y="345" class="fll"></text>
+<path d="M560 360 V292" class="fl" marker-end="url(#ar)"></path><text x="568" y="320" class="fll">сущности</text>
+<path d="M640 286 C 700 320 740 340 790 362" class="fl" marker-end="url(#ar)"></path><text x="690" y="300" class="fll">события</text>
+<path d="M640 184 C 690 150 720 120 760 104" class="fl" marker-end="url(#ar)"></path><text x="600" y="140" class="fll">ключ</text>
+<path d="M662 225 H1118" class="fl" marker-end="url(#ar)"></path><text x="880" y="190" class="fll">очищенный промпт</text>
+<path d="M1118 255 H664" class="fl" marker-end="url(#ar)"></path><text x="880" y="296" class="fll">ответ модели</text>
+<path d="M230 72 C 330 72 410 120 466 180" class="fl" marker-end="url(#ar)"></path><text x="340" y="58" class="fll">конфиг, ключи</text>
+<g class="tm" data-t="th1" tabindex="0"><title>T1 · S · Подмена приложения или пользователя</title><circle cx="262" cy="212" r="14" fill="#2563eb"></circle><text x="262" y="216" text-anchor="middle">T1</text></g>
+<g class="tm" data-t="th4" tabindex="0"><title>T4 · T · Prompt injection</title><circle cx="300" cy="212" r="14" fill="#ea7a00"></circle><text x="300" y="216" text-anchor="middle">T4</text></g>
+<g class="tm" data-t="th14" tabindex="0"><title>T14 · E · Агент выходит за рамки</title><circle cx="338" cy="212" r="14" fill="#dc2626"></circle><text x="338" y="216" text-anchor="middle">T14</text></g>
+<g class="tm" data-t="th10" tabindex="0"><title>T10 · D · Перегрузка и обход шлюза</title><circle cx="300" cy="266" r="14" fill="#ea7a00"></circle><text x="300" y="270" text-anchor="middle">T10</text></g>
+<g class="tm" data-t="th6" tabindex="0"><title>T6 · I · Пропуск детекции ПД</title><circle cx="470" cy="328" r="14" fill="#dc2626"></circle><text x="470" y="332" text-anchor="middle">T6</text></g>
+<g class="tm" data-t="th5" tabindex="0"><title>T5 · R · Нет доказательства, что ушло наружу</title><circle cx="705" cy="318" r="14" fill="#7c3aed"></circle><text x="705" y="322" text-anchor="middle">T5</text></g>
+<g class="tm" data-t="th7" tabindex="0"><title>T7 · I · ПД в логах</title><circle cx="742" cy="338" r="14" fill="#dc2626"></circle><text x="742" y="342" text-anchor="middle">T7</text></g>
+<g class="tm" data-t="th8" tabindex="0"><title>T8 · I · Утечка ключа / карты</title><circle cx="712" cy="128" r="14" fill="#dc2626"></circle><text x="712" y="132" text-anchor="middle">T8</text></g>
+<g class="tm" data-t="th2" tabindex="0"><title>T2 · S · Подмена endpoint Bedrock</title><circle cx="860" cy="206" r="14" fill="#2563eb"></circle><text x="860" y="210" text-anchor="middle">T2</text></g>
+<g class="tm" data-t="th9" tabindex="0"><title>T9 · I · Лишние данные в ответе</title><circle cx="860" cy="266" r="14" fill="#dc2626"></circle><text x="860" y="270" text-anchor="middle">T9</text></g>
+<g class="tm" data-t="th11" tabindex="0"><title>T11 · D · Обрыв канала</title><circle cx="960" cy="206" r="14" fill="#ea7a00"></circle><text x="960" y="210" text-anchor="middle">T11</text></g>
+<g class="tm" data-t="th3" tabindex="0"><title>T3 · T · Изменение конфигурации guardrail</title><circle cx="282" cy="92" r="14" fill="#ea7a00"></circle><text x="282" y="96" text-anchor="middle">T3</text></g>
+<g class="tm" data-t="th13" tabindex="0"><title>T13 · E · Доступ к admin UI</title><circle cx="322" cy="112" r="14" fill="#dc2626"></circle><text x="322" y="116" text-anchor="middle">T13</text></g>
+<g class="tm" data-t="th12" tabindex="0"><title>T12 · E · Компрометация хоста</title><circle cx="652" cy="190" r="14" fill="#dc2626"></circle><text x="652" y="194" text-anchor="middle">T12</text></g>
+</svg><div class="legend"><span><i class="lg ext"></i>внешняя сущность</span><span><i class="lg proc"></i>процесс</span><span><i class="lg st"></i>хранилище</span><span><i class="lg tb"></i>граница доверия</span><span><i class="dot" style="background:#2563eb"></i>S Spoofing</span><span><i class="dot" style="background:#ea7a00"></i>T Tampering</span><span><i class="dot" style="background:#7c3aed"></i>R Repudiation</span><span><i class="dot" style="background:#dc2626"></i>I Info disclosure</span><span><i class="dot" style="background:#dc2626"></i>E EoP</span></div></div><div class="card" style="overflow:hidden;margin-top:18px"><table class="stride"><tbody><tr><th>ID</th><th>КАТЕГОРИЯ</th><th>УГРОЗА</th><th>ГДЕ</th><th>МЕРЫ</th><th>OWASP LLM</th></tr><tr id="th1"><td class="mono tid">T1</td><td><span class="sl b">S</span>Spoofing</td><td>Приложение или пользователь выдаёт себя за другого и получает доступ к моделям или чужим лимитам</td><td class="mono">TB1</td><td>Виртуальные ключи на приложение, mTLS или SSO перед шлюзом, ротация ключей</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th2"><td class="mono tid">T2</td><td><span class="sl b">S</span>Spoofing</td><td>Подмена endpoint Bedrock или DNS, запросы уходят не туда</td><td class="mono">TB3</td><td>Interface endpoint PrivateLink, приватный DNS, TLS с проверкой сертификата, egress только на endpoint</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th3"><td class="mono tid">T3</td><td><span class="sl o">T</span>Tampering</td><td>Изменение конфигурации guardrail или распознавателей (выключить маскирование, ослабить порог)</td><td class="mono">TB4</td><td>Конфиг в git с ревью, подписанные образы, запрет изменений из UI в проде, алерт на изменение политики</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM03</a></td></tr><tr id="th4"><td class="mono tid">T4</td><td><span class="sl o">T</span>Tampering</td><td>Prompt injection в данных приложения ломает поведение модели или пытается вытащить данные</td><td class="mono">TB1, TB3</td><td>Детекция prompt injection в шлюзе; <a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-prompt-attack.html">prompt attack filter</a> Bedrock Guardrails: для InvokeModel нужны теги пользовательского ввода, результаты инструментов (toolResult) он не проверяет</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM01</a></td></tr><tr id="th5"><td class="mono tid">T5</td><td><span class="sl v">R</span>Repudiation</td><td>Нельзя доказать, что именно ушло за границу и кто отправил запрос</td><td class="mono">TB1, TB3</td><td>Аудит с ID ключа, хешем промпта, типами сущностей и итоговым текстом; неизменяемое хранение; синхронизация времени</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th6"><td class="mono tid">T6</td><td><span class="sl r">I</span>Information Disclosure</td><td>Пропуск детекции: ПД в промпте уходят в регион</td><td class="mono">TB2, TB3</td><td>Свои распознаватели под страну, тестовый набор, Bedrock Guardrails как второй рубеж, мониторинг доли срабатываний</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM02</a></td></tr><tr id="th7"><td class="mono tid">T7</td><td><span class="sl r">I</span>Information Disclosure</td><td>ПД оседают в логах шлюза, Presidio или Bedrock invocation logging</td><td class="mono">TB2, TB3</td><td>Не логировать сырые тела запросов; LiteLLM-режим <code>logging_only</code> маскирует ПД перед отправкой в логи; invocation logging Bedrock оставить выключенным или осознанно включить; шифрование логов</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM02</a></td></tr><tr id="th8"><td class="mono tid">T8</td><td><span class="sl r">I</span>Information Disclosure</td><td>Утечка ключа или карты токенов делает режим B обратимым для атакующего</td><td class="mono">TB2</td><td>Ключи в HSM/KMS в стране, раздельные роли, ротация, срок жизни карты</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th9"><td class="mono tid">T9</td><td><span class="sl r">I</span>Information Disclosure</td><td>Модель возвращает данные, которых не было в запросе (из других контекстов, RAG, системного промпта)</td><td class="mono">TB3</td><td>post_call проверка ответа, фильтр ответов в Guardrails, минимум данных в системном промпте</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM07</a></td></tr><tr id="th10"><td class="mono tid">T10</td><td><span class="sl o">D</span>Denial of Service</td><td>Шлюз или Presidio перегружены, приложения начинают ходить к LLM в обход</td><td class="mono">TB1, TB2</td><td>Rate limits и бюджеты на ключ, горизонтальное масштабирование Presidio, fail-closed вместо fail-open</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM10</a></td></tr><tr id="th11"><td class="mono tid">T11</td><td><span class="sl o">D</span>Denial of Service</td><td>Обрыв канала DX/VPN</td><td class="mono">TB3</td><td>Резервный канал, понятное поведение при недоступности (ошибка, а не обход)</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th12"><td class="mono tid">T12</td><td><span class="sl r">E</span>Elevation of Privilege</td><td>Компрометация хоста шлюза даёт IAM-роль с доступом к Bedrock и всем данным в памяти</td><td class="mono">TB3, TB4</td><td>Минимальные права роли (только InvokeModel нужных моделей), изоляция хоста, патчинг, отдельный аккаунт AWS</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th13"><td class="mono tid">T13</td><td><span class="sl r">E</span>Elevation of Privilege</td><td>Доступ к admin UI или master key LiteLLM даёт смену политик и выпуск ключей</td><td class="mono">TB4</td><td>Admin UI только из сети управления, SSO и MFA, master key в секрет-хранилище</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th14"><td class="mono tid">T14</td><td><span class="sl r">E</span>Elevation of Privilege</td><td>Агент с инструментами (MCP) выполняет действия шире нужного</td><td class="mono">TB1</td><td>Guardrails на MCP-вызовы, allow-list инструментов, подтверждение опасных действий</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM06</a></td></tr></tbody></table></div><!-- RISKS -->
+<h2>Риски и открытые вопросы</h2>
+<div class="g4">
+ <div class="card risk"><div class="k r mono">RISK</div><h4>Пропуски детекции</h4><p>Любой пропуск означает, что ПД ушли в регион. Нужен размеченный тестовый набор на местных данных и регулярная проверка распознавателей.</p></div>
+ <div class="card risk"><div class="k r mono">RISK</div><h4>Косвенная идентификация</h4><p>Без явных идентификаторов человека иногда можно узнать по контексту: должность, город, редкое событие. Маскировка по сущностям это не закрывает.</p></div>
+ <div class="card risk"><div class="k o mono">OPS</div><h4>Обход шлюза</h4><p>Шлюз работает, только если других путей к LLM нет: блокировка на периметре, отсутствие AWS-кредов у приложений, контроль SaaS-ИИ.</p></div>
+ <div class="card risk"><div class="k o mono">OPS</div><h4>Файлы и стриминг</h4><p>PDF, изображения и потоковые ответы требуют отдельной обработки: извлечение текста до маскирования, проверка ответа по мере генерации.</p></div>
+ <div class="card risk"><div class="k b mono">QUESTION</div><h4>Логи в регионе</h4><p><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html">Invocation logging</a> выключен по умолчанию. Если его включат, в регионе окажутся полные тексты запросов: решить заранее, нужен ли он.</p></div>
+ <div class="card risk"><div class="k b mono">QUESTION</div><h4>Поддержка</h4><p>LiteLLM и Presidio это open source. Кто сопровождает решение у заказчика: своя команда, партнёр или вендор.</p></div>
+ <div class="card risk"><div class="k b mono">QUESTION</div><h4>Задержка</h4><p>Детекция добавляет время к каждому запросу. Замерить на реальных промптах и длине контекста заказчика.</p></div>
+ <div class="card risk"><div class="k b mono">QUESTION</div><h4>Правовая оценка</h4><p>Достаточно ли выбранного режима маскирования для местного закона о персональных данных, определяет юридическая служба заказчика.</p></div>
+</div>
+
+</div><div class="en-only"><!-- COMPONENTS -->
+<h2>Components</h2>
+<p class="h2sub">Everything in the customer country runs as containers on regular VMs, Kubernetes or AWS Outposts. No GPU needed: there is no local LLM inference, only PII detection.</p>
+<div class="g3">
+ <div class="card comp"><div class="k b">GATEWAY</div><h3>LiteLLM proxy</h3>
+  <p>Self-hosted gateway with an OpenAI-compatible API. Applications get gateway virtual keys, not AWS access.</p>
+  <ul><li>Presidio guardrail modes: <code>pre_call</code>, <code>during_call</code>, <code>post_call</code>, <code>logging_only</code>, <code>pre_mcp_call</code>; MASK or BLOCK action per entity type</li>
+  <li>Separate endpoint to call a guardrail directly from other services</li>
+  <li>The same mechanism applies to MCP tool calls</li></ul>
+  <div class="links"><a target="_blank" href="https://docs.litellm.ai/docs/proxy/guardrails/pii_masking_v2">Presidio guardrail</a><a target="_blank" href="https://docs.litellm.ai/docs/apply_guardrail">apply_guardrail</a><a target="_blank" href="https://docs.litellm.ai/docs/mcp_guardrail">MCP guardrails</a></div></div>
+ <div class="card comp"><div class="k g">DETECTION</div><h3>Presidio Analyzer</h3>
+  <p>Finds entities in text using regex, NER and context words; each match gets a confidence score.</p>
+  <ul><li>Built-in recognizers: names, email, phone numbers, cards and more</li>
+  <li>Country-specific recognizers: national IDs, document numbers, internal IDs. Need a pattern, context and a checksum where one exists</li>
+  <li>Confidence threshold and allow-list are configurable to avoid stripping public data</li></ul>
+  <div class="links"><a target="_blank" href="https://github.com/microsoft/presidio/blob/main/docs/analyzer/index.md">Analyzer</a><a target="_blank" href="https://github.com/microsoft/presidio/blob/main/docs/analyzer/developing_recognizers.md">Developing recognizers</a></div></div>
+ <div class="card comp"><div class="k g">ANONYMIZATION</div><h3>Presidio Anonymizer</h3>
+  <p>An operator is set per entity type. By default the value is replaced with the type name, e.g. <code>&lt;PERSON&gt;</code>.</p>
+  <ul><li><code>replace</code>, <code>redact</code>, <code>mask</code>, <code>hash</code>: irreversible</li>
+  <li><code>encrypt</code> + deanonymize: reversible, the key stays in-country</li>
+  <li>Community pseudonymizer for LiteLLM: swaps names for fictional ones and restores originals in the response</li></ul>
+  <div class="links"><a target="_blank" href="https://github.com/microsoft/presidio/blob/main/docs/anonymizer/index.md">Anonymizer</a><a target="_blank" href="https://github.com/microsoft/presidio/blob/main/docs/tutorial/10_simple_anonymization.md">Operators</a><a target="_blank" href="https://github.com/PalenaAI/palena-litellm-pseudonymizer">palena-litellm-pseudonymizer</a></div></div>
+ <div class="card comp"><div class="k o">MODEL</div><h3>Amazon Bedrock</h3>
+  <p>LiteLLM calls Bedrock through the <code>bedrock/</code> provider (Converse, Invoke and other routes). Auth via boto3: gateway IAM role or profile.</p>
+  <ul><li>Applications hold no AWS credentials; only the gateway can reach models</li>
+  <li>Allowed models and Regions are set by gateway policy</li></ul>
+  <div class="links"><a target="_blank" href="https://docs.litellm.ai/docs/providers/bedrock">LiteLLM: Bedrock provider</a><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/endpoints-region-availability.html">Bedrock endpoints by Region</a></div></div>
+ <div class="card comp"><div class="k o">NETWORK</div><h3>Link to the Region</h3>
+  <p>Direct Connect or Site-to-Site VPN to a VPC in the Region, then the Bedrock interface endpoint. Model traffic does not go over the internet.</p>
+  <ul><li>Gateway egress allowed only to the Bedrock endpoint</li>
+  <li>Direct application egress to LLM providers is blocked at the perimeter</li></ul>
+  <div class="links"><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/vpc-interface-endpoints.html">Bedrock + PrivateLink</a><a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/privatelink/create-interface-endpoint.html">Interface endpoints</a></div></div>
+ <div class="card comp"><div class="k o">SECOND LINE</div><h3>Bedrock Guardrails</h3>
+  <p>Sensitive information filters detect PII and custom regex patterns in prompts and responses. Can be called standalone via <code>ApplyGuardrail</code>.</p>
+  <ul><li>Runs in the Region, so it only sees the already sanitized prompt</li>
+  <li>Useful as a check that local masking missed nothing, and as a response filter</li><li>Prompt attack filter: jailbreak, prompt injection and prompt leakage (the latter Standard tier only)</li></ul>
+  <div class="links"><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html">PII filters</a><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-use-independent-api.html">ApplyGuardrail</a><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-prompt-attack.html">Prompt attacks</a></div></div>
+</div>
+
+<h2>What crosses the border</h2>
+<p class="h2sub">The key table for conversations with the customer's security and legal teams.</p>
+<div class="card" style="overflow:hidden"><table>
+ <tbody><tr><th>DATA</th><th>PROCESSED WHERE</th><th>BORDER</th><th>NOTE</th></tr>
+ <tr><td>Original prompt with PII</td><td>Application → gateway</td><td><span class="st never">STAYS</span></td><td>Remains in-country; only a hash goes to the audit log</td></tr>
+ <tr><td>Detected PII values</td><td>Presidio, gateway memory</td><td><span class="st never">STAYS</span></td><td>Log stores entity types and positions, not values</td></tr>
+ <tr><td>Sanitized prompt</td><td>Bedrock in Region</td><td><span class="st yes">CROSSES</span></td><td>Placeholders instead of PII. Indirect identifiers in the text may remain</td></tr>
+ <tr><td>Model response</td><td>Bedrock → gateway</td><td><span class="st yes">RETURNS</span></td><td>Goes through post_call check; in reversible mode placeholders are restored</td></tr>
+ <tr><td>Key / token map</td><td>Vault in-country</td><td><span class="st never">STAYS</span></td><td>Reversible mode only</td></tr>
+ <tr><td>Bedrock metrics and logs</td><td>CloudWatch / CloudTrail in Region</td><td><span class="st q">CONFIGURE</span></td><td><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html">Invocation logging</a> is off by default. If enabled, full requests and responses go to CloudWatch Logs or S3 in the same account and Region</td></tr>
+</tbody></table></div>
+
+<h2>Two masking modes</h2>
+<p class="h2sub">The mode determines what exactly reaches the Region. Whether a mode is sufficient under local law is for the customer's legal team to assess.</p>
+<div class="g2 modes">
+ <div class="card comp a"><div class="k g">MODE A · IRREVERSIBLE</div><h3>Redaction / replacement</h3>
+  <div class="kv"><div>OPERATORS</div><div><code>replace</code>, <code>redact</code>, <code>mask</code></div>
+  <div>TO REGION</div><div>Customer &lt;PERSON&gt;, ID &lt;NATIONAL_ID&gt; requests...</div>
+  <div>RESPONSE</div><div>Comes back with placeholders; the app fills in data itself if needed</div>
+  <div>PROS</div><div>No link between tokens and people anywhere; simpler audit</div>
+  <div>CONS</div><div>Model quality drops when the task depends on concrete values</div></div></div>
+ <div class="card comp b"><div class="k v">MODE B · REVERSIBLE</div><h3>Pseudonymization</h3>
+  <div class="kv"><div>OPERATORS</div><div><code>encrypt</code> + deanonymize, or stable fictional names</div>
+  <div>TO REGION</div><div>Customer Person_7f3a (or "Maria Ivanova") requests...</div>
+  <div>RESPONSE</div><div>Gateway restores originals; the user sees real names</div>
+  <div>PROS</div><div>Natural UX; the model keeps relations between entities</div>
+  <div>CONS</div><div>Pseudonymized data is generally still treated as personal data. Requires key storage</div></div></div>
+</div>
+
+<h2>Gateway configuration sketch</h2>
+<p class="h2sub">Parameters checked against the <a target="_blank" href="https://docs.litellm.ai/docs/proxy/guardrails/pii_masking_v2">LiteLLM docs</a> as of 2026-10-07. Not a production file: re-check for the version you deploy.</p>
+<div class="g2">
+<pre><span class="c"># litellm config.yaml</span>
+<span class="k2">model_list:</span>
+  - <span class="k2">model_name:</span> <span class="s">frontier</span>
+    <span class="k2">litellm_params:</span>
+      <span class="k2">model:</span> <span class="s">bedrock/&lt;model-id&gt;</span>
+      <span class="k2">aws_region_name:</span> <span class="s">&lt;region&gt;</span>
+      <span class="c"># credentials: gateway host IAM role</span>
+
+<span class="k2">guardrails:</span>
+  - <span class="k2">guardrail_name:</span> <span class="s">"presidio-pii"</span>
+    <span class="k2">litellm_params:</span>
+      <span class="k2">guardrail:</span> <span class="s">presidio</span>
+      <span class="k2">mode:</span> <span class="s">"pre_call"</span>
+      <span class="k2">presidio_filter_scope:</span> <span class="s">both</span>   <span class="c"># input | output | both</span>
+      <span class="k2">presidio_language:</span> <span class="s">"en"</span>       <span class="c"># ru/kk: needs an NLP model in Analyzer</span>
+      <span class="k2">presidio_score_thresholds:</span>
+        <span class="k2">ALL:</span> <span class="s">0.7</span>
+      <span class="k2">output_parse_pii:</span> <span class="s">true</span>        <span class="c"># mode B only: restore originals</span>
+
+<span class="c"># Presidio endpoints are set via env vars</span>
+<span class="c"># PRESIDIO_ANALYZER_API_BASE, PRESIDIO_ANONYMIZER_API_BASE</span>
+<span class="c"># source: docs.litellm.ai, PII Masking - Presidio</span></pre>
+<pre><span class="c"># custom national ID recognizer (Python, Presidio)</span>
+<span class="k2">from</span> presidio_analyzer <span class="k2">import</span> Pattern, PatternRecognizer
+
+national_id = PatternRecognizer(
+    supported_entity=<span class="s">"NATIONAL_ID"</span>,
+    patterns=[Pattern(<span class="s">"national_id"</span>, <span class="s">r"\bID-\d{4}-\d{4}\b"</span>, 0.3)],
+    context=[<span class="s">"national id"</span>, <span class="s">"ID"</span>],
+)
+<span class="c"># short digit patterns without context give many false
+# positives: context words and a check-digit
+# validation (validate_result) raise the score.
+# Take the check-digit logic from the official
+# ID format specification</span></pre>
+</div>
+<h2>STRIDE: gateway threat model</h2><p class="h2sub">Threats grouped by <a target="_blank" href="https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats">STRIDE</a> categories for the trust boundaries in the diagram above. LLM-specific items are mapped to <a target="_blank" href="https://genai.owasp.org/llm-top-10/">OWASP Top 10 for LLM Applications 2025</a>; as of 2026-10-07 this is the version published on genai.owasp.org. A starting list for a workshop with the customer's security team, not a complete model.</p><div class="card tbx"><div class="k b mono" style="margin-bottom:10px">TRUST BOUNDARIES</div><div class="tbs"><div><b>TB1</b> Application → gateway</div><div><b>TB2</b> Gateway → Presidio / audit / vault</div><div><b>TB3</b> Gateway → Bedrock (country border)</div><div><b>TB4</b> Gateway admins and CI/CD</div></div></div><h3 class="dfdh">Data flow diagram with threats</h3>
+<p class="h2sub">Notation as in Microsoft Threat Modeling Tool: external entities, processes, stores, trust boundaries. Markers are threats from the table below; hover or click.</p>
+<div class="card dfd"><svg viewBox="0 0 1344 470">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#64748b"></path></marker></defs>
+<line x1="1040" y1="14" x2="1040" y2="456" class="tbl red"></line>
+<text x="1050" y="32" class="tbt" fill="#dc2626">TB3 · COUNTRY BORDER</text>
+<line x1="320" y1="150" x2="320" y2="300" class="tbl"></line><text x="328" y="296" class="tbt">TB1</text>
+<line x1="300" y1="20" x2="300" y2="135" class="tbl"></line><text x="250" y="32" class="tbt">TB4</text>
+<rect x="392" y="342" width="590" height="104" rx="14" class="tbr"></rect><text x="404" y="440" class="tbt">TB2</text>
+<rect x="742" y="44" width="236" height="96" rx="14" class="tbr"></rect><text x="752" y="134" class="tbt">TB2</text>
+<rect x="40" y="40" width="190" height="64" class="ext"></rect><text x="135.0" y="69.0" class="nn" text-anchor="middle">Admins, CI/CD</text><text x="135.0" y="87.0" class="ns" text-anchor="middle">external entity</text>
+<rect x="40" y="200" width="190" height="80" class="ext"></rect><text x="135.0" y="237.0" class="nn" text-anchor="middle">Applications</text><text x="135.0" y="255.0" class="ns" text-anchor="middle">external entity</text>
+<rect x="420" y="180" width="240" height="110" rx="55.0" class="proc"></rect><text x="540.0" y="232.0" class="nn" text-anchor="middle">LiteLLM gateway</text><text x="540.0" y="250.0" class="ns" text-anchor="middle">process</text>
+<rect x="420" y="362" width="240" height="64" rx="32.0" class="proc"></rect><text x="540.0" y="391.0" class="nn" text-anchor="middle">Presidio</text><text x="540.0" y="409.0" class="ns" text-anchor="middle">process</text>
+<rect x="762" y="364" width="200" height="60" fill="#fff"></rect><line x1="762" y1="364" x2="962" y2="364" class="st2"></line><line x1="762" y1="424" x2="962" y2="424" class="st2"></line><text x="862.0" y="391.0" class="nn" text-anchor="middle">Audit log</text><text x="862.0" y="409.0" class="ns" text-anchor="middle">data store</text>
+<rect x="762" y="62" width="196" height="60" fill="#fff"></rect><line x1="762" y1="62" x2="958" y2="62" class="st2"></line><line x1="762" y1="122" x2="958" y2="122" class="st2"></line><text x="860.0" y="89.0" class="nn" text-anchor="middle">Key / map</text><text x="860.0" y="107.0" class="ns" text-anchor="middle">data store</text>
+<rect x="1120" y="190" width="200" height="90" class="ext"></rect><text x="1220.0" y="232.0" class="nn" text-anchor="middle">Amazon Bedrock</text><text x="1220.0" y="250.0" class="ns" text-anchor="middle">external entity</text>
+<path d="M230 225 H418" class="fl" marker-end="url(#ar)"></path><text x="236" y="200" class="fll">prompt with PII</text>
+<path d="M418 255 H232" class="fl" marker-end="url(#ar)"></path><text x="236" y="290" class="fll">response</text>
+<path d="M520 292 V360" class="fl" marker-end="url(#ar)"></path><text x="528" y="345" class="fll"></text>
+<path d="M560 360 V292" class="fl" marker-end="url(#ar)"></path><text x="568" y="320" class="fll">entities</text>
+<path d="M640 286 C 700 320 740 340 790 362" class="fl" marker-end="url(#ar)"></path><text x="690" y="300" class="fll">events</text>
+<path d="M640 184 C 690 150 720 120 760 104" class="fl" marker-end="url(#ar)"></path><text x="600" y="140" class="fll">key</text>
+<path d="M662 225 H1118" class="fl" marker-end="url(#ar)"></path><text x="880" y="190" class="fll">sanitized prompt</text>
+<path d="M1118 255 H664" class="fl" marker-end="url(#ar)"></path><text x="880" y="296" class="fll">model response</text>
+<path d="M230 72 C 330 72 410 120 466 180" class="fl" marker-end="url(#ar)"></path><text x="340" y="58" class="fll">config, keys</text>
+<g class="tm" data-t="th1" tabindex="0"><title>T1 · S · App or user spoofing</title><circle cx="262" cy="212" r="14" fill="#2563eb"></circle><text x="262" y="216" text-anchor="middle">T1</text></g>
+<g class="tm" data-t="th4" tabindex="0"><title>T4 · T · Prompt injection</title><circle cx="300" cy="212" r="14" fill="#ea7a00"></circle><text x="300" y="216" text-anchor="middle">T4</text></g>
+<g class="tm" data-t="th14" tabindex="0"><title>T14 · E · Agent overreach</title><circle cx="338" cy="212" r="14" fill="#dc2626"></circle><text x="338" y="216" text-anchor="middle">T14</text></g>
+<g class="tm" data-t="th10" tabindex="0"><title>T10 · D · Overload and bypass</title><circle cx="300" cy="266" r="14" fill="#ea7a00"></circle><text x="300" y="270" text-anchor="middle">T10</text></g>
+<g class="tm" data-t="th6" tabindex="0"><title>T6 · I · PII detection miss</title><circle cx="470" cy="328" r="14" fill="#dc2626"></circle><text x="470" y="332" text-anchor="middle">T6</text></g>
+<g class="tm" data-t="th5" tabindex="0"><title>T5 · R · No proof of what left</title><circle cx="705" cy="318" r="14" fill="#7c3aed"></circle><text x="705" y="322" text-anchor="middle">T5</text></g>
+<g class="tm" data-t="th7" tabindex="0"><title>T7 · I · PII in logs</title><circle cx="742" cy="338" r="14" fill="#dc2626"></circle><text x="742" y="342" text-anchor="middle">T7</text></g>
+<g class="tm" data-t="th8" tabindex="0"><title>T8 · I · Key / map leak</title><circle cx="712" cy="128" r="14" fill="#dc2626"></circle><text x="712" y="132" text-anchor="middle">T8</text></g>
+<g class="tm" data-t="th2" tabindex="0"><title>T2 · S · Bedrock endpoint spoofing</title><circle cx="860" cy="206" r="14" fill="#2563eb"></circle><text x="860" y="210" text-anchor="middle">T2</text></g>
+<g class="tm" data-t="th9" tabindex="0"><title>T9 · I · Extra data in response</title><circle cx="860" cy="266" r="14" fill="#dc2626"></circle><text x="860" y="270" text-anchor="middle">T9</text></g>
+<g class="tm" data-t="th11" tabindex="0"><title>T11 · D · Link failure</title><circle cx="960" cy="206" r="14" fill="#ea7a00"></circle><text x="960" y="210" text-anchor="middle">T11</text></g>
+<g class="tm" data-t="th3" tabindex="0"><title>T3 · T · Guardrail config tampering</title><circle cx="282" cy="92" r="14" fill="#ea7a00"></circle><text x="282" y="96" text-anchor="middle">T3</text></g>
+<g class="tm" data-t="th13" tabindex="0"><title>T13 · E · Admin UI access</title><circle cx="322" cy="112" r="14" fill="#dc2626"></circle><text x="322" y="116" text-anchor="middle">T13</text></g>
+<g class="tm" data-t="th12" tabindex="0"><title>T12 · E · Host compromise</title><circle cx="652" cy="190" r="14" fill="#dc2626"></circle><text x="652" y="194" text-anchor="middle">T12</text></g>
+</svg><div class="legend"><span><i class="lg ext"></i>external entity</span><span><i class="lg proc"></i>process</span><span><i class="lg st"></i>data store</span><span><i class="lg tb"></i>trust boundary</span><span><i class="dot" style="background:#2563eb"></i>S Spoofing</span><span><i class="dot" style="background:#ea7a00"></i>T Tampering</span><span><i class="dot" style="background:#7c3aed"></i>R Repudiation</span><span><i class="dot" style="background:#dc2626"></i>I Info disclosure</span><span><i class="dot" style="background:#dc2626"></i>E EoP</span></div></div><div class="card" style="overflow:hidden;margin-top:18px"><table class="stride"><tbody><tr><th>ID</th><th>CATEGORY</th><th>THREAT</th><th>WHERE</th><th>MITIGATIONS</th><th>OWASP LLM</th></tr><tr id="th1"><td class="mono tid">T1</td><td><span class="sl b">S</span>Spoofing</td><td>App or user impersonates another and gets model access or someone else's quota</td><td class="mono">TB1</td><td>Per-app virtual keys, mTLS or SSO in front of the gateway, key rotation</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th2"><td class="mono tid">T2</td><td><span class="sl b">S</span>Spoofing</td><td>Spoofed Bedrock endpoint or DNS, requests go elsewhere</td><td class="mono">TB3</td><td>PrivateLink interface endpoint, private DNS, TLS cert validation, egress only to the endpoint</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th3"><td class="mono tid">T3</td><td><span class="sl o">T</span>Tampering</td><td>Changing guardrail or recognizer config (disable masking, lower threshold)</td><td class="mono">TB4</td><td>Config in git with review, signed images, no UI changes in prod, alert on policy change</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM03</a></td></tr><tr id="th4"><td class="mono tid">T4</td><td><span class="sl o">T</span>Tampering</td><td>Prompt injection in application data alters model behavior or tries to extract data</td><td class="mono">TB1, TB3</td><td>Prompt injection detection in the gateway; Bedrock Guardrails <a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-prompt-attack.html">prompt attack filter</a>: InvokeModel needs user input tags, tool results (toolResult) are not evaluated</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM01</a></td></tr><tr id="th5"><td class="mono tid">T5</td><td><span class="sl v">R</span>Repudiation</td><td>Cannot prove what left the country and who sent a request</td><td class="mono">TB1, TB3</td><td>Audit with key ID, prompt hash, entity types and outgoing text; immutable storage; time sync</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th6"><td class="mono tid">T6</td><td><span class="sl r">I</span>Information Disclosure</td><td>Detection miss: PII in the prompt reaches the Region</td><td class="mono">TB2, TB3</td><td>Country recognizers, test set, Bedrock Guardrails as second line, monitoring detection rates</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM02</a></td></tr><tr id="th7"><td class="mono tid">T7</td><td><span class="sl r">I</span>Information Disclosure</td><td>PII ends up in gateway, Presidio or Bedrock invocation logs</td><td class="mono">TB2, TB3</td><td>No raw request bodies in logs; LiteLLM <code>logging_only</code> mode masks PII before logging; keep Bedrock invocation logging off or enable it deliberately; encrypt logs</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM02</a></td></tr><tr id="th8"><td class="mono tid">T8</td><td><span class="sl r">I</span>Information Disclosure</td><td>Leaked key or token map makes mode B reversible for an attacker</td><td class="mono">TB2</td><td>Keys in in-country HSM/KMS, separated roles, rotation, map TTL</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th9"><td class="mono tid">T9</td><td><span class="sl r">I</span>Information Disclosure</td><td>Model returns data not in the request (other contexts, RAG, system prompt)</td><td class="mono">TB3</td><td>post_call response check, Guardrails output filters, minimal data in system prompts</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM07</a></td></tr><tr id="th10"><td class="mono tid">T10</td><td><span class="sl o">D</span>Denial of Service</td><td>Gateway or Presidio overloaded, apps start bypassing it</td><td class="mono">TB1, TB2</td><td>Per-key rate limits and budgets, horizontal Presidio scaling, fail-closed rather than fail-open</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM10</a></td></tr><tr id="th11"><td class="mono tid">T11</td><td><span class="sl o">D</span>Denial of Service</td><td>DX/VPN link failure</td><td class="mono">TB3</td><td>Backup link, defined behavior on outage (error, not bypass)</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th12"><td class="mono tid">T12</td><td><span class="sl r">E</span>Elevation of Privilege</td><td>Gateway host compromise yields the IAM role with Bedrock access and all in-memory data</td><td class="mono">TB3, TB4</td><td>Least-privilege role (InvokeModel on specific models only), host isolation, patching, dedicated AWS account</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th13"><td class="mono tid">T13</td><td><span class="sl r">E</span>Elevation of Privilege</td><td>Access to LiteLLM admin UI or master key allows policy changes and key issuance</td><td class="mono">TB4</td><td>Admin UI only from management network, SSO and MFA, master key in a secrets store</td><td class="mono"><span style="color:var(--mute)">-</span></td></tr><tr id="th14"><td class="mono tid">T14</td><td><span class="sl r">E</span>Elevation of Privilege</td><td>Tool-using agent (MCP) performs actions beyond its scope</td><td class="mono">TB1</td><td>Guardrails on MCP calls, tool allow-list, confirmation for risky actions</td><td class="mono"><a target="_blank" href="https://genai.owasp.org/llm-top-10/">LLM06</a></td></tr></tbody></table></div><!-- RISKS -->
+<h2>Risks and open questions</h2>
+<div class="g4">
+ <div class="card risk"><div class="k r mono">RISK</div><h4>Detection misses</h4><p>Any miss means PII reached the Region. Requires a labeled test set on local data and regular recognizer checks.</p></div>
+ <div class="card risk"><div class="k r mono">RISK</div><h4>Indirect identification</h4><p>Without explicit identifiers a person can sometimes be recognized from context: role, city, rare event. Entity masking does not cover this.</p></div>
+ <div class="card risk"><div class="k o mono">OPS</div><h4>Gateway bypass</h4><p>Works only if there is no other path to LLMs: perimeter blocking, no AWS credentials in apps, control of SaaS AI tools.</p></div>
+ <div class="card risk"><div class="k o mono">OPS</div><h4>Files and streaming</h4><p>PDFs, images and streamed responses need separate handling: text extraction before masking, response checks during generation.</p></div>
+ <div class="card risk"><div class="k b mono">QUESTION</div><h4>Logs in Region</h4><p><a target="_blank" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-invocation-logging.html">Invocation logging</a> is off by default. If enabled, full request texts are stored in the Region: decide upfront whether it is needed.</p></div>
+ <div class="card risk"><div class="k b mono">QUESTION</div><h4>Support</h4><p>LiteLLM and Presidio are open source. Who operates the solution: in-house team, partner or vendor.</p></div>
+ <div class="card risk"><div class="k b mono">QUESTION</div><h4>Latency</h4><p>Detection adds time to every request. Measure on the customer's real prompts and context lengths.</p></div>
+ <div class="card risk"><div class="k b mono">QUESTION</div><h4>Legal assessment</h4><p>Whether the chosen masking mode is sufficient under local data protection law is determined by the customer's legal team.</p></div>
+</div>
+</div>
+<div class="foot"><span class="ru-only">Reference pattern для обсуждения. Не является юридической оценкой. Ссылки ведут на документацию LiteLLM, Presidio, AWS, Microsoft и OWASP.</span><span class="en-only">Reference pattern for discussion. Not a legal assessment. Links point to LiteLLM, Presidio, AWS, Microsoft and OWASP documentation.</span></div>
+</div>
+
+<script>
+const T={
+ru:{raw:'Клиент <span class="p">John Doe</span>, ID <span class="p">ID-0000-0000</span>, тел. <span class="p">+1 555 0100</span> просит реструктуризацию кредита на 24 месяца',
+ masked:'Клиент <span class="m">&lt;PERSON&gt;</span>, ID <span class="m">&lt;NATIONAL_ID&gt;</span>, тел. <span class="m">&lt;PHONE_NUMBER&gt;</span> просит реструктуризацию кредита на 24 месяца',
+ in:'В СТРАНЕ',out:'ЧЕРЕЗ ГРАНИЦУ',pause:'❚❚ пауза',play:'▶ авто',
+ s:[['1. Запрос приложения','ПРИЛОЖЕНИЕ → ШЛЮЗ',null,'Приложение вызывает шлюз по OpenAI-совместимому API со своим виртуальным ключом. Трафик не выходит за пределы страны.'],
+ ['2. Детекция ПД','PRESIDIO ANALYZER','PERSON (0.85) · NATIONAL_ID (0.9, context: ID) · PHONE_NUMBER (0.75)','pre_call guardrail отправляет текст в Presidio Analyzer. Срабатывают встроенные распознаватели и свой распознаватель национального ID.'],
+ ['3. Маскирование и аудит','PRESIDIO ANONYMIZER',null,'Найденные значения заменяются операторами. В локальный аудит пишутся типы сущностей, хеш исходного промпта и итоговый текст, который уйдёт наружу.'],
+ ['4. Вызов Bedrock','ШЛЮЗ → BEDROCK (ЧЕРЕЗ ГРАНИЦУ)',null,'Через Direct Connect или VPN и PrivateLink уходит только очищенный промпт. Опционально Bedrock Guardrails проверяет его ещё раз уже в регионе.'],
+ ['5. Ответ модели','BEDROCK → ШЛЮЗ','Для клиента <span class="m">&lt;PERSON&gt;</span> возможна реструктуризация на 24 месяца при условии...','Ответ возвращается в шлюз и проходит post_call проверку.'],
+ ['6. Обратная подстановка','ОПЦИОНАЛЬНО · РЕЖИМ B','Для клиента <span class="p">John Doe</span> возможна реструктуризация на 24 месяца при условии...','Только в обратимом режиме: шлюз берёт ключ или карту из локального хранилища и подставляет оригиналы. В режиме A этот шаг пропускается.'],
+ ['7. Доставка','ШЛЮЗ → ПРИЛОЖЕНИЕ','Ответ доставлен. Сырые ПД не покидали страну.','Достаточность такой схемы для местного закона оценивает юридическая служба заказчика.']]},
+en:{raw:'Customer <span class="p">John Doe</span>, ID <span class="p">ID-0000-0000</span>, phone <span class="p">+1 555 0100</span> requests a 24-month loan restructuring',
+ masked:'Customer <span class="m">&lt;PERSON&gt;</span>, ID <span class="m">&lt;NATIONAL_ID&gt;</span>, phone <span class="m">&lt;PHONE_NUMBER&gt;</span> requests a 24-month loan restructuring',
+ in:'IN-COUNTRY',out:'CROSSES BORDER',pause:'❚❚ pause',play:'▶ auto',
+ s:[['1. Application request','APPLICATION → GATEWAY',null,'The application calls the gateway via the OpenAI-compatible API with its virtual key. Traffic stays in-country.'],
+ ['2. PII detection','PRESIDIO ANALYZER','PERSON (0.85) · NATIONAL_ID (0.9, context: ID) · PHONE_NUMBER (0.75)','The pre_call guardrail sends text to Presidio Analyzer. Built-in recognizers and the custom national ID recognizer fire.'],
+ ['3. Masking and audit','PRESIDIO ANONYMIZER',null,'Detected values are replaced by operators. The local audit records entity types, a hash of the original prompt and the outgoing text.'],
+ ['4. Bedrock call','GATEWAY → BEDROCK (ACROSS BORDER)',null,'Only the sanitized prompt travels over Direct Connect or VPN and PrivateLink. Optionally Bedrock Guardrails checks it again inside the Region.'],
+ ['5. Model response','BEDROCK → GATEWAY','Customer <span class="m">&lt;PERSON&gt;</span> is eligible for a 24-month restructuring provided that...','The response returns to the gateway and passes the post_call check.'],
+ ['6. Re-identification','OPTIONAL · MODE B','Customer <span class="p">John Doe</span> is eligible for a 24-month restructuring provided that...','Reversible mode only: the gateway takes the key or map from local storage and restores originals. Skipped in mode A.'],
+ ['7. Delivery','GATEWAY → APPLICATION','Response delivered. Raw PII never left the country.','Whether this design is sufficient under local law is assessed by the customer\'s legal team.']]}};
+const META=[{n:['app'],p:'p1',w:'in',m:'raw'},{n:['gw','pr'],p:'p2',w:'in'},{n:['gw','log'],p:'p2',w:'in',m:'masked'},{n:['br'],p:'p3',w:'out',m:'masked'},{n:['gw','gr'],p:'p4',w:'out'},{n:['gw','map'],p:'p5',w:'in'},{n:['app'],p:'p6',w:'in'}];
+const ids=['app','gw','pr','log','map','br','gr'];
+function lsGet(){try{return localStorage.getItem('dlp-lang')}catch(e){return null}}
+function lsSet(v){try{localStorage.setItem('dlp-lang',v)}catch(e){}}
+let L=lsGet()||'en',cur=0,auto=true,timer;
+const st=document.getElementById('steps');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function buildSteps(){st.innerHTML='';T[L].s.forEach((s,i)=>{const b=document.createElement('button');b.textContent=s[0];b.onclick=()=>{auto=false;upd();show(i)};st.appendChild(b)});
+ const c=document.createElement('div');c.className='ctl';c.innerHTML='<button id="prev">←</button><button id="play"></button><button id="next">→</button>';st.appendChild(c);
+ document.getElementById('prev').onclick=()=>{auto=false;upd();show((cur-1+7)%7)};
+ document.getElementById('next').onclick=()=>{auto=false;upd();show((cur+1)%7)};
+ document.getElementById('play').onclick=()=>{auto=!auto;upd()};}
+function pulse(id){if(reduce)return;const e=document.getElementById(id);const len=e.getTotalLength();
+ e.style.transition='none';e.style.strokeDasharray='46 '+(len+100);e.style.strokeDashoffset=46;e.style.opacity=1;e.getBoundingClientRect();
+ e.style.transition='stroke-dashoffset 1.2s linear, opacity .3s 1.1s';e.style.strokeDashoffset=-len;e.style.opacity=0;}
+function show(i,np){cur=i;const s=T[L].s[i],m=META[i];
+ ids.forEach(x=>document.getElementById('n-'+x).classList.toggle('on',m.n.includes(x)));
+ [...st.querySelectorAll('button')].slice(0,7).forEach((b,j)=>b.classList.toggle('on',j===i));
+ document.getElementById('vl').innerHTML=s[1]+' <span class="where '+m.w+'">'+T[L][m.w]+'</span>';
+ document.getElementById('pl').innerHTML=s[2]||T[L][m.m];document.getElementById('vd').textContent=s[3];if(!np)pulse(m.p);}
+function upd(){const b=document.getElementById('play');if(b)b.textContent=auto?T[L].pause:T[L].play;clearInterval(timer);if(auto)timer=setInterval(()=>show((cur+1)%7),3200)}
+function setLang(l){L=l;lsSet(l);document.documentElement.lang=l;
+ document.querySelectorAll('[data-'+l+']').forEach(e=>e.textContent=e.dataset[l]);
+ document.querySelectorAll('.lang button[data-l]').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+ document.title=l==='ru'?'In-country DLP Gateway перед Amazon Bedrock':'In-country DLP Gateway in front of Amazon Bedrock';
+ buildSteps();show(cur,true);upd();}
+document.querySelectorAll('.lang button[data-l]').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+function setTheme(t){document.documentElement.dataset.theme=t;try{localStorage.setItem('dlp-theme',t)}catch(e){}
+ document.querySelectorAll('.lang button[data-th]').forEach(b=>b.classList.toggle('on',b.dataset.th===t));}
+document.querySelectorAll('.lang button[data-th]').forEach(b=>b.onclick=()=>setTheme(b.dataset.th));
+let TH0='light';try{TH0=localStorage.getItem('dlp-theme')||'light'}catch(e){}setTheme(TH0);
+setLang(L);show(0);
+
+document.querySelectorAll('.tm').forEach(g=>{const go=()=>{const root=g.closest('.ru-only,.en-only');const r=root&&root.querySelector('#'+g.dataset.t)||document.getElementById(g.dataset.t);if(!r)return;r.scrollIntoView({behavior:'smooth',block:'center'});r.classList.add('hl');setTimeout(()=>r.classList.remove('hl'),1800)};g.onclick=go;g.onkeydown=e=>{if(e.key==='Enter')go()}});
+</script>
+
+</body></html>
